@@ -72,6 +72,10 @@ Run the local React Storybook from the repo root:
 npm run storybook:react
 ```
 
+Published Chromatic Storybook:
+
+- [https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/)
+
 ## Testing And Development Notes
 
 - Unit and integration coverage lives in the repo root under `testing/`.

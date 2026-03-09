@@ -77,6 +77,10 @@ Run the local Angular Storybook from the repo root:
 npm run storybook:angular
 ```
 
+Published Chromatic Storybook:
+
+- [https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/](https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/)
+
 ## Testing And Development Notes
 
 - Angular integration tests run through `ng test angular-ssr --watch=false`.

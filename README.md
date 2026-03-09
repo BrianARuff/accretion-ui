@@ -30,6 +30,11 @@ Use these checks first:
 2. Run both SSR smoke apps and confirm the Accordion renders before hydration, then remains interactive after hydration.
 3. Run the test and smoke commands to confirm keyboard support, controlled behavior, disabled handling, and Storybook page availability.
 
+Published Storybooks:
+
+- React Chromatic Storybook: [https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/)
+- Angular Chromatic Storybook: [https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/](https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/)
+
 ## Architecture Overview
 
 The repo uses a layered approach:
@@ -138,6 +143,7 @@ npm run storybook:react
 ```
 
 Default URL: [http://127.0.0.1:6006](http://127.0.0.1:6006)
+Published Chromatic URL: [https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/)
 
 ## Run Storybook For Angular
 
@@ -146,6 +152,7 @@ npm run storybook:angular
 ```
 
 Default URL: [http://127.0.0.1:6007](http://127.0.0.1:6007)
+Published Chromatic URL: [https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/](https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/)
 
 ## Run Chromatic For React
 
