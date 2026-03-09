@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "useDefineForClassFields": false,
+    "strict": true,
+    "noImplicitOverride": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@accretion-ui/core": ["packages/core/src/index.ts"],
+      "@accretion-ui/core/*": ["packages/core/src/*"],
+      "@accretion-ui/react": ["packages/react/src/index.ts"],
+      "@accretion-ui/react/*": ["packages/react/src/*"],
+      "@accretion-ui/angular": ["packages/angular/src/public-api.ts"],
+      "@accretion-ui/angular/*": ["packages/angular/src/*"]
+    }
+  }
+}

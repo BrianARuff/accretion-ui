@@ -1,0 +1,152 @@
+import { Canvas, Meta, Story, Subtitle, Title } from '@storybook/addon-docs/blocks';
+import * as AccordionStories from './Accordion.stories';
+
+<Meta of={AccordionStories} title="Angular/Accordion Docs" />
+
+<Title>Angular Accordion</Title>
+<Subtitle>Accessible disclosure content applied directly to native Angular host elements.</Subtitle>
+
+The Angular package exposes standalone directives instead of wrapper components so each Accordion part can attach to a real native element. That keeps attributes, semantics, and SSR output predictable without adding extra host nodes around the actual trigger or panel elements.
+
+## Purpose
+
+Use Accordion when a page needs progressive disclosure without forcing people to leave the surrounding context. Common examples include release plans, implementation detail, policy explanation, and support handoff content.
+
+## API Summary
+
+<table>
+  <thead>
+    <tr>
+      <th>Directive</th>
+      <th>Input / output</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>value</code></td>
+      <td>Controls the open item in single mode or the open item list in multiple mode.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>defaultValue</code></td>
+      <td>Sets the initial open item or items for uncontrolled Angular usage.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>valueChange</code></td>
+      <td>Emits the next open value after click or keyboard interaction.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>multiple</code>, <code>collapsible</code></td>
+      <td>Switches between single and multiple expansion behavior and controls whether the last open item can collapse.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>disabled</code>, <code>loopFocus</code>, <code>hiddenUntilFound</code>, <code>size</code></td>
+      <td>Disables the full control, keeps keyboard navigation looping, enables find-in-page reveal behavior, and selects density.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordionItem</code></td>
+      <td><code>value</code></td>
+      <td>Provides the stable item key used for open state, IDs, and programmatic control.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordionItem</code></td>
+      <td><code>disabled</code>, <code>openChange</code></td>
+      <td>Disables a single item or emits when that item opens or closes.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordionHeader</code></td>
+      <td>Native heading attributes</td>
+      <td>Lets consuming teams choose heading semantics without adding extra wrapper elements.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordionTrigger</code></td>
+      <td>Native button attributes on the host element</td>
+      <td>Supports normal Angular host attributes while keeping the Accordion ARIA wiring in place.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordionPanel</code></td>
+      <td><code>hiddenUntilFound</code> plus native <code>div</code> attributes</td>
+      <td>Keeps panel markup native and allows closed content to participate in browser find-in-page behavior.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Usage Guidance
+
+- Apply `acAccordionTrigger` to a real `button` whenever possible.
+- Use `value` and `valueChange` when the surrounding component needs programmatic control.
+- Keep each `acAccordionItem` `value` stable so SSR IDs remain deterministic.
+- Prefer one Accordion per information cluster rather than nesting multiple levels.
+
+## Accessibility Guidance
+
+- Triggers support `ArrowUp`, `ArrowDown`, `Home`, and `End` keyboard navigation.
+- Panels link back to their trigger with `aria-labelledby`.
+- Disabled items expose disabled state without relying on color alone.
+- Trigger text should remain meaningful when read out of context by assistive technologies.
+
+## Styling Hooks
+
+Import `@accretion-ui/angular/styles.css` in consuming applications or include the source stylesheet directly during local development.
+
+<table>
+  <thead>
+    <tr>
+      <th>CSS variable</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--ac-accordion-root-border-color</code></td>
+      <td>Sets the default wrapper outline around the grouped Accordion items.</td>
+    </tr>
+    <tr>
+      <td><code>--ac-accordion-root-border-color-open</code></td>
+      <td>Defines the wrapper highlight shown when one or more items are expanded.</td>
+    </tr>
+    <tr>
+      <td><code>--ac-accordion-root-padding</code></td>
+      <td>Controls the inset between the wrapper outline and the item stack for each size variant.</td>
+    </tr>
+    <tr>
+      <td><code>--ac-accordion-trigger-background-open</code></td>
+      <td>Styles the trigger surface when its panel is expanded.</td>
+    </tr>
+    <tr>
+      <td><code>--ac-accordion-trigger-min-height</code></td>
+      <td>Sets the minimum interactive height for compact, comfortable, and spacious variants.</td>
+    </tr>
+    <tr>
+      <td><code>--ac-accordion-panel-padding-inline</code></td>
+      <td>Controls the readable left and right content padding inside panels.</td>
+    </tr>
+    <tr>
+      <td><code>--ac-accordion-panel-padding-block-start</code></td>
+      <td>Controls the top padding inside panels. The default matches the bottom padding for balanced spacing.</td>
+    </tr>
+    <tr>
+      <td><code>--ac-accordion-focus-ring-color</code></td>
+      <td>Defines the keyboard focus-visible outline color used on triggers.</td>
+    </tr>
+    <tr>
+      <td><code>--ac-accordion-focus-ring-offset</code></td>
+      <td>Sets how far the trigger focus ring is inset from the trigger edge.</td>
+    </tr>
+  </tbody>
+</table>
+
+## Examples
+
+<Canvas>
+  <Story of={AccordionStories.Default} />
+</Canvas>
+
+<Canvas>
+  <Story of={AccordionStories.ControlledSingle} />
+</Canvas>

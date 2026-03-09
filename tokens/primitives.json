@@ -1,0 +1,1562 @@
+{
+  "color": {
+    "neutral": {
+      "1": {
+        "$type": "color",
+        "$value": "#F8FBFF",
+        "$description": "Accretion UI neutral color step 1 (#F8FBFF). Use on large background surfaces and subtle UI fills where very low contrast is expected. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.99 0.008 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "2": {
+        "$type": "color",
+        "$value": "#F0F5FC",
+        "$description": "Accretion UI neutral color step 2 (#F0F5FC). Use on large background surfaces and subtle UI fills where very low contrast is expected. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.97 0.012 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "3": {
+        "$type": "color",
+        "$value": "#E4EBF6",
+        "$description": "Accretion UI neutral color step 3 (#E4EBF6). Use on large background surfaces and subtle UI fills where very low contrast is expected. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.94 0.018 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "4": {
+        "$type": "color",
+        "$value": "#D4DFF0",
+        "$description": "Accretion UI neutral color step 4 (#D4DFF0). Use for container backgrounds, dividers, and low-emphasis borders in dense layouts. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.90 0.024 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#BDCCE4",
+        "$description": "Accretion UI neutral color step 5 (#BDCCE4). Use for container backgrounds, dividers, and low-emphasis borders in dense layouts. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.84 0.028 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "6": {
+        "$type": "color",
+        "$value": "#9FB3D2",
+        "$description": "Accretion UI neutral color step 6 (#9FB3D2). Use for container backgrounds, dividers, and low-emphasis borders in dense layouts. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.76 0.030 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "7": {
+        "$type": "color",
+        "$value": "#7F98BB",
+        "$description": "Accretion UI neutral color step 7 (#7F98BB). Use for medium-emphasis borders, icons, and text on light surfaces. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.67 0.032 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "8": {
+        "$type": "color",
+        "$value": "#607C9F",
+        "$description": "Accretion UI neutral color step 8 (#607C9F). Use for medium-emphasis borders, icons, and text on light surfaces. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.57 0.030 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "9": {
+        "$type": "color",
+        "$value": "#4A6281",
+        "$description": "Accretion UI neutral color step 9 (#4A6281). Use for medium-emphasis borders, icons, and text on light surfaces. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.47 0.028 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#374B66",
+        "$description": "Accretion UI neutral color step 10 (#374B66). Use for high-emphasis text and icons that must read clearly on light surfaces. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.38 0.024 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "11": {
+        "$type": "color",
+        "$value": "#27364B",
+        "$description": "Accretion UI neutral color step 11 (#27364B). Use for high-emphasis text and icons that must read clearly on light surfaces. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.30 0.020 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "12": {
+        "$type": "color",
+        "$value": "#182230",
+        "$description": "Accretion UI neutral color step 12 (#182230). Use for high-emphasis text and icons that must read clearly on light surfaces. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.22 0.016 245)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      }
+    },
+    "brand": {
+      "1": {
+        "$type": "color",
+        "$value": "#F8FDFF",
+        "$description": "Accretion UI brand color step 1 (#F8FDFF). Use as a tinted surface for brand states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.99 0.018 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "2": {
+        "$type": "color",
+        "$value": "#E7F9FF",
+        "$description": "Accretion UI brand color step 2 (#E7F9FF). Use as a tinted surface for brand states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.97 0.030 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "3": {
+        "$type": "color",
+        "$value": "#CDF2FF",
+        "$description": "Accretion UI brand color step 3 (#CDF2FF). Use as a tinted surface for brand states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.94 0.050 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "4": {
+        "$type": "color",
+        "$value": "#A9EAFF",
+        "$description": "Accretion UI brand color step 4 (#A9EAFF). Use for subtle brand fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.90 0.075 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#7ADAF8",
+        "$description": "Accretion UI brand color step 5 (#7ADAF8). Use for subtle brand fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.84 0.100 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "6": {
+        "$type": "color",
+        "$value": "#38C3E8",
+        "$description": "Accretion UI brand color step 6 (#38C3E8). Use for subtle brand fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.76 0.125 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "7": {
+        "$type": "color",
+        "$value": "#07A6C8",
+        "$description": "Accretion UI brand color step 7 (#07A6C8). Use for active brand accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.67 0.145 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "8": {
+        "$type": "color",
+        "$value": "#0A85A1",
+        "$description": "Accretion UI brand color step 8 (#0A85A1). Use for active brand accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.57 0.160 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "9": {
+        "$type": "color",
+        "$value": "#02657C",
+        "$description": "Accretion UI brand color step 9 (#02657C). Use for active brand accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.47 0.155 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#034A5B",
+        "$description": "Accretion UI brand color step 10 (#034A5B). Use for high-emphasis brand text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.38 0.140 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "11": {
+        "$type": "color",
+        "$value": "#013440",
+        "$description": "Accretion UI brand color step 11 (#013440). Use for high-emphasis brand text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.30 0.120 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "12": {
+        "$type": "color",
+        "$value": "#001F27",
+        "$description": "Accretion UI brand color step 12 (#001F27). Use for high-emphasis brand text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.22 0.100 220)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      }
+    },
+    "success": {
+      "1": {
+        "$type": "color",
+        "$value": "#F6FFF7",
+        "$description": "Accretion UI success color step 1 (#F6FFF7). Use as a tinted surface for success states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.99 0.016 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "2": {
+        "$type": "color",
+        "$value": "#E9FBEB",
+        "$description": "Accretion UI success color step 2 (#E9FBEB). Use as a tinted surface for success states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.97 0.028 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "3": {
+        "$type": "color",
+        "$value": "#D7F4DC",
+        "$description": "Accretion UI success color step 3 (#D7F4DC). Use as a tinted surface for success states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.94 0.045 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "4": {
+        "$type": "color",
+        "$value": "#C0EBC8",
+        "$description": "Accretion UI success color step 4 (#C0EBC8). Use for subtle success fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.90 0.065 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#A3DBAD",
+        "$description": "Accretion UI success color step 5 (#A3DBAD). Use for subtle success fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.84 0.085 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "6": {
+        "$type": "color",
+        "$value": "#7FC48E",
+        "$description": "Accretion UI success color step 6 (#7FC48E). Use for subtle success fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.76 0.105 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "7": {
+        "$type": "color",
+        "$value": "#56AA6B",
+        "$description": "Accretion UI success color step 7 (#56AA6B). Use for active success accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.67 0.125 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "8": {
+        "$type": "color",
+        "$value": "#258D48",
+        "$description": "Accretion UI success color step 8 (#258D48). Use for active success accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.57 0.140 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "9": {
+        "$type": "color",
+        "$value": "#046E30",
+        "$description": "Accretion UI success color step 9 (#046E30). Use for active success accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.47 0.136 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#015122",
+        "$description": "Accretion UI success color step 10 (#015122). Use for high-emphasis success text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.38 0.124 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "11": {
+        "$type": "color",
+        "$value": "#013916",
+        "$description": "Accretion UI success color step 11 (#013916). Use for high-emphasis success text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.30 0.108 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "12": {
+        "$type": "color",
+        "$value": "#00220A",
+        "$description": "Accretion UI success color step 12 (#00220A). Use for high-emphasis success text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.22 0.090 150)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      }
+    },
+    "warning": {
+      "1": {
+        "$type": "color",
+        "$value": "#FFFBF4",
+        "$description": "Accretion UI warning color step 1 (#FFFBF4). Use as a tinted surface for warning states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.99 0.014 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "2": {
+        "$type": "color",
+        "$value": "#FDF4E2",
+        "$description": "Accretion UI warning color step 2 (#FDF4E2). Use as a tinted surface for warning states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.97 0.026 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "3": {
+        "$type": "color",
+        "$value": "#F9EACB",
+        "$description": "Accretion UI warning color step 3 (#F9EACB). Use as a tinted surface for warning states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.94 0.044 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "4": {
+        "$type": "color",
+        "$value": "#F2DCAE",
+        "$description": "Accretion UI warning color step 4 (#F2DCAE). Use for subtle warning fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.90 0.064 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#E4C789",
+        "$description": "Accretion UI warning color step 5 (#E4C789). Use for subtle warning fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.84 0.086 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "6": {
+        "$type": "color",
+        "$value": "#D1AC5A",
+        "$description": "Accretion UI warning color step 6 (#D1AC5A). Use for subtle warning fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.76 0.110 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "7": {
+        "$type": "color",
+        "$value": "#BA8E17",
+        "$description": "Accretion UI warning color step 7 (#BA8E17). Use for active warning accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.67 0.132 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "8": {
+        "$type": "color",
+        "$value": "#977103",
+        "$description": "Accretion UI warning color step 8 (#977103). Use for active warning accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.57 0.148 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "9": {
+        "$type": "color",
+        "$value": "#735601",
+        "$description": "Accretion UI warning color step 9 (#735601). Use for active warning accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.47 0.140 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#553E03",
+        "$description": "Accretion UI warning color step 10 (#553E03). Use for high-emphasis warning text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.38 0.126 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "11": {
+        "$type": "color",
+        "$value": "#3C2B02",
+        "$description": "Accretion UI warning color step 11 (#3C2B02). Use for high-emphasis warning text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.30 0.110 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "12": {
+        "$type": "color",
+        "$value": "#241901",
+        "$description": "Accretion UI warning color step 12 (#241901). Use for high-emphasis warning text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.22 0.092 85)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      }
+    },
+    "danger": {
+      "1": {
+        "$type": "color",
+        "$value": "#FEFBFA",
+        "$description": "Accretion UI danger color step 1 (#FEFBFA). Use as a tinted surface for danger states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.99 0.016 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "2": {
+        "$type": "color",
+        "$value": "#FFF2F0",
+        "$description": "Accretion UI danger color step 2 (#FFF2F0). Use as a tinted surface for danger states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.97 0.030 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "3": {
+        "$type": "color",
+        "$value": "#FFE4E1",
+        "$description": "Accretion UI danger color step 3 (#FFE4E1). Use as a tinted surface for danger states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.94 0.050 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "4": {
+        "$type": "color",
+        "$value": "#FED2CD",
+        "$description": "Accretion UI danger color step 4 (#FED2CD). Use for subtle danger fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.90 0.072 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#FFB5AE",
+        "$description": "Accretion UI danger color step 5 (#FFB5AE). Use for subtle danger fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.84 0.095 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "6": {
+        "$type": "color",
+        "$value": "#F4928A",
+        "$description": "Accretion UI danger color step 6 (#F4928A). Use for subtle danger fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.76 0.120 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "7": {
+        "$type": "color",
+        "$value": "#DF6E68",
+        "$description": "Accretion UI danger color step 7 (#DF6E68). Use for active danger accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.67 0.142 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "8": {
+        "$type": "color",
+        "$value": "#C34845",
+        "$description": "Accretion UI danger color step 8 (#C34845). Use for active danger accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.57 0.158 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "9": {
+        "$type": "color",
+        "$value": "#9F2B2B",
+        "$description": "Accretion UI danger color step 9 (#9F2B2B). Use for active danger accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.47 0.152 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#7B1519",
+        "$description": "Accretion UI danger color step 10 (#7B1519). Use for high-emphasis danger text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.38 0.136 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "11": {
+        "$type": "color",
+        "$value": "#5B030A",
+        "$description": "Accretion UI danger color step 11 (#5B030A). Use for high-emphasis danger text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.30 0.118 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "12": {
+        "$type": "color",
+        "$value": "#3A0104",
+        "$description": "Accretion UI danger color step 12 (#3A0104). Use for high-emphasis danger text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.22 0.100 25)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      }
+    },
+    "info": {
+      "1": {
+        "$type": "color",
+        "$value": "#F5FEFF",
+        "$description": "Accretion UI info color step 1 (#F5FEFF). Use as a tinted surface for info states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.99 0.016 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "2": {
+        "$type": "color",
+        "$value": "#E0FBFE",
+        "$description": "Accretion UI info color step 2 (#E0FBFE). Use as a tinted surface for info states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.97 0.029 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "3": {
+        "$type": "color",
+        "$value": "#C7F5FB",
+        "$description": "Accretion UI info color step 3 (#C7F5FB). Use as a tinted surface for info states, including banners, chips, and inline notifications. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.94 0.048 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "4": {
+        "$type": "color",
+        "$value": "#A6ECF4",
+        "$description": "Accretion UI info color step 4 (#A6ECF4). Use for subtle info fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.90 0.070 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "5": {
+        "$type": "color",
+        "$value": "#7CDCE7",
+        "$description": "Accretion UI info color step 5 (#7CDCE7). Use for subtle info fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.84 0.092 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "6": {
+        "$type": "color",
+        "$value": "#3BC6D4",
+        "$description": "Accretion UI info color step 6 (#3BC6D4). Use for subtle info fills, soft accents, and non-critical highlights. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.76 0.116 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "7": {
+        "$type": "color",
+        "$value": "#03A9B6",
+        "$description": "Accretion UI info color step 7 (#03A9B6). Use for active info accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.67 0.138 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "8": {
+        "$type": "color",
+        "$value": "#088792",
+        "$description": "Accretion UI info color step 8 (#088792). Use for active info accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.57 0.154 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "9": {
+        "$type": "color",
+        "$value": "#016770",
+        "$description": "Accretion UI info color step 9 (#016770). Use for active info accents, borders, and icons that need stronger emphasis. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.47 0.148 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "10": {
+        "$type": "color",
+        "$value": "#024C52",
+        "$description": "Accretion UI info color step 10 (#024C52). Use for high-emphasis info text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.38 0.132 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "11": {
+        "$type": "color",
+        "$value": "#02353A",
+        "$description": "Accretion UI info color step 11 (#02353A). Use for high-emphasis info text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.30 0.116 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      },
+      "12": {
+        "$type": "color",
+        "$value": "#011F22",
+        "$description": "Accretion UI info color step 12 (#011F22). Use for high-emphasis info text, icons, and controls where stronger visual priority is required. Accessibility: verify foreground/background pairs meet WCAG contrast (4.5:1 for body text, 3:1 for large text and UI components), and do not rely on color alone for meaning.",
+        "$extensions": {
+          "org.design_system.color": {
+            "oklch": "oklch(0.22 0.098 205)",
+            "intendedGamut": "display-p3",
+            "storedGamut": "srgb"
+          }
+        }
+      }
+    },
+    "white": {
+      "$type": "color",
+      "$value": "#FFFFFF",
+      "$description": "Accretion UI utility white (#FFFFFF). Use for inverse text and icon treatments on dark surfaces or for neutral light fills. Accessibility: confirm contrast against adjacent colors, especially when white text appears on tinted backgrounds.",
+      "$extensions": {
+        "org.design_system.color": {
+          "oklch": "oklch(1.0 0 0)",
+          "intendedGamut": "display-p3",
+          "storedGamut": "srgb"
+        }
+      }
+    },
+    "black": {
+      "$type": "color",
+      "$value": "#000000",
+      "$description": "Accretion UI utility black (#000000). Use for maximum-contrast text, icons, and overlays when strong emphasis is needed. Accessibility: avoid pure black on pure white for long reading blocks; prefer neutral text tones to reduce visual fatigue while keeping WCAG compliance.",
+      "$extensions": {
+        "org.design_system.color": {
+          "oklch": "oklch(0 0 0)",
+          "intendedGamut": "display-p3",
+          "storedGamut": "srgb"
+        }
+      }
+    },
+    "transparent": {
+      "$type": "color",
+      "$value": "#00000000",
+      "$description": "Accretion UI transparent utility color (#00000000). Use to preserve inherited backgrounds, masks, and gradient stops without adding visible pigment. Accessibility: always evaluate the resulting layered contrast because transparency can reduce readability unexpectedly.",
+      "$extensions": {
+        "org.design_system.color": {
+          "oklch": "oklch(0 0 0 / 0)",
+          "intendedGamut": "display-p3",
+          "storedGamut": "srgb"
+        }
+      }
+    }
+  },
+  "font": {
+    "family": {
+      "sans": {
+        "$type": "fontFamily",
+        "$value": "Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif",
+        "$description": "Accretion UI primary sans-serif stack (Inter, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif). Use for all default UI text including body copy, labels, and headings. Accessibility: keep fallback families intact to preserve legibility across platforms and avoid custom fonts that degrade character clarity."
+      },
+      "mono": {
+        "$type": "fontFamily",
+        "$value": "\"JetBrains Mono\", \"SFMono-Regular\", Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace",
+        "$description": "Accretion UI monospace stack (\"JetBrains Mono\", \"SFMono-Regular\", Menlo, Monaco, Consolas, \"Liberation Mono\", \"Courier New\", monospace). Use for code snippets, tabular numerals, and technical identifiers where fixed character width improves scanability. Accessibility: avoid long paragraphs in monospace to reduce reading fatigue."
+      }
+    },
+    "weight": {
+      "regular": {
+        "$type": "fontWeight",
+        "$value": "400",
+        "$description": "Accretion UI font weight regular (400). Use as the default body text weight for sustained reading. Accessibility: avoid ultra-light text styles in UI copy; maintain sufficient size and contrast whenever using heavier or lighter emphasis."
+      },
+      "medium": {
+        "$type": "fontWeight",
+        "$value": "500",
+        "$description": "Accretion UI font weight medium (500). Use for emphasized labels and dense UI metadata that need mild prominence. Accessibility: avoid ultra-light text styles in UI copy; maintain sufficient size and contrast whenever using heavier or lighter emphasis."
+      },
+      "semibold": {
+        "$type": "fontWeight",
+        "$value": "600",
+        "$description": "Accretion UI font weight semibold (600). Use for section titles, active navigation labels, and button text needing stronger hierarchy. Accessibility: avoid ultra-light text styles in UI copy; maintain sufficient size and contrast whenever using heavier or lighter emphasis."
+      },
+      "bold": {
+        "$type": "fontWeight",
+        "$value": "700",
+        "$description": "Accretion UI font weight bold (700). Use sparingly for high-priority headings and critical numeric emphasis. Accessibility: avoid ultra-light text styles in UI copy; maintain sufficient size and contrast whenever using heavier or lighter emphasis."
+      }
+    },
+    "size": {
+      "2xs": {
+        "$type": "dimension",
+        "$value": "11px",
+        "$description": "Accretion UI font size 2xs (11px). Use for compact metadata, captions, and helper labels in dense interfaces. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "12px",
+        "$description": "Accretion UI font size xs (12px). Use for compact metadata, captions, and helper labels in dense interfaces. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "14px",
+        "$description": "Accretion UI font size sm (14px). Use for secondary body text and short-form labels. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "16px",
+        "$description": "Accretion UI font size md (16px). Use for default body text and form content. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "18px",
+        "$description": "Accretion UI font size lg (18px). Use for prominent labels, section intros, and large body text. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "20px",
+        "$description": "Accretion UI font size xl (20px). Use for prominent labels, section intros, and large body text. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": "24px",
+        "$description": "Accretion UI font size 2xl (24px). Use for headings and display text with clear visual hierarchy. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "3xl": {
+        "$type": "dimension",
+        "$value": "30px",
+        "$description": "Accretion UI font size 3xl (30px). Use for headings and display text with clear visual hierarchy. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "4xl": {
+        "$type": "dimension",
+        "$value": "36px",
+        "$description": "Accretion UI font size 4xl (36px). Use for headings and display text with clear visual hierarchy. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      },
+      "5xl": {
+        "$type": "dimension",
+        "$value": "48px",
+        "$description": "Accretion UI font size 5xl (48px). Use for headings and display text with clear visual hierarchy. Accessibility: prefer 16px or larger for primary body text on touch devices and verify zoom/reflow behavior at 200%-400%."
+      }
+    },
+    "lineHeight": {
+      "2xs": {
+        "$type": "dimension",
+        "$value": "16px",
+        "$description": "Accretion UI line height 2xs (16px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.45 line-height ratio with font.size.2xs. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "16px",
+        "$description": "Accretion UI line height xs (16px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.33 line-height ratio with font.size.xs. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "20px",
+        "$description": "Accretion UI line height sm (20px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.43 line-height ratio with font.size.sm. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "24px",
+        "$description": "Accretion UI line height md (24px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.50 line-height ratio with font.size.md. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "26px",
+        "$description": "Accretion UI line height lg (26px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.44 line-height ratio with font.size.lg. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "xl": {
+        "$type": "dimension",
+        "$value": "28px",
+        "$description": "Accretion UI line height xl (28px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.40 line-height ratio with font.size.xl. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "2xl": {
+        "$type": "dimension",
+        "$value": "32px",
+        "$description": "Accretion UI line height 2xl (32px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.33 line-height ratio with font.size.2xl. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "3xl": {
+        "$type": "dimension",
+        "$value": "38px",
+        "$description": "Accretion UI line height 3xl (38px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.27 line-height ratio with font.size.3xl. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "4xl": {
+        "$type": "dimension",
+        "$value": "44px",
+        "$description": "Accretion UI line height 4xl (44px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.22 line-height ratio with font.size.4xl. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      },
+      "5xl": {
+        "$type": "dimension",
+        "$value": "56px",
+        "$description": "Accretion UI line height 5xl (56px). Use to maintain vertical rhythm for text set at the matching size scale. This pairs to a ~1.17 line-height ratio with font.size.5xl. Accessibility: keep paragraph line-height near 1.4-1.6 for long-form readability."
+      }
+    },
+    "letterSpacing": {
+      "tighter": {
+        "$type": "dimension",
+        "$value": "-0.02em",
+        "$description": "Accretion UI letter spacing tighter (-0.02em). Use only for large display headlines where tight tracking improves visual cohesion. Accessibility: avoid tight tracking on small text and avoid excessive tracking for long sentences to preserve reading speed."
+      },
+      "tight": {
+        "$type": "dimension",
+        "$value": "-0.01em",
+        "$description": "Accretion UI letter spacing tight (-0.01em). Use for short headings and compact labels that can tolerate slight tracking reduction. Accessibility: avoid tight tracking on small text and avoid excessive tracking for long sentences to preserve reading speed."
+      },
+      "normal": {
+        "$type": "dimension",
+        "$value": "0em",
+        "$description": "Accretion UI letter spacing normal (0em). Use as the default tracking for body text and most UI labels. Accessibility: avoid tight tracking on small text and avoid excessive tracking for long sentences to preserve reading speed."
+      },
+      "wide": {
+        "$type": "dimension",
+        "$value": "0.01em",
+        "$description": "Accretion UI letter spacing wide (0.01em). Use for uppercase labels or compact metadata where extra spacing improves recognition. Accessibility: avoid tight tracking on small text and avoid excessive tracking for long sentences to preserve reading speed."
+      },
+      "wider": {
+        "$type": "dimension",
+        "$value": "0.02em",
+        "$description": "Accretion UI letter spacing wider (0.02em). Use sparingly for overline text and high-contrast uppercase microcopy. Accessibility: avoid tight tracking on small text and avoid excessive tracking for long sentences to preserve reading speed."
+      }
+    }
+  },
+  "space": {
+    "0": {
+      "$type": "dimension",
+      "$value": "0px",
+      "$description": "Accretion UI spacing token 0 (0px). Use for micro-adjustments such as icon alignment and tight internal padding. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "Accretion UI spacing token 2 (2px). Use for micro-adjustments such as icon alignment and tight internal padding. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Accretion UI spacing token 4 (4px). Use for micro-adjustments such as icon alignment and tight internal padding. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Accretion UI spacing token 8 (8px). Use for compact component spacing, including label-to-control and icon-to-text gaps. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$description": "Accretion UI spacing token 12 (12px). Use for compact component spacing, including label-to-control and icon-to-text gaps. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Accretion UI spacing token 16 (16px). Use for default component padding and spacing between related controls. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "20px",
+      "$description": "Accretion UI spacing token 20 (20px). Use for default component padding and spacing between related controls. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "Accretion UI spacing token 24 (24px). Use for default component padding and spacing between related controls. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "28": {
+      "$type": "dimension",
+      "$value": "28px",
+      "$description": "Accretion UI spacing token 28 (28px). Use for section-level spacing between grouped content blocks. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "32px",
+      "$description": "Accretion UI spacing token 32 (32px). Use for section-level spacing between grouped content blocks. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "40px",
+      "$description": "Accretion UI spacing token 40 (40px). Use for section-level spacing between grouped content blocks. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "48px",
+      "$description": "Accretion UI spacing token 48 (48px). Use for section-level spacing between grouped content blocks. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "56": {
+      "$type": "dimension",
+      "$value": "56px",
+      "$description": "Accretion UI spacing token 56 (56px). Use for page-level rhythm, major layout gutters, and large empty space between regions. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": "64px",
+      "$description": "Accretion UI spacing token 64 (64px). Use for page-level rhythm, major layout gutters, and large empty space between regions. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "72": {
+      "$type": "dimension",
+      "$value": "72px",
+      "$description": "Accretion UI spacing token 72 (72px). Use for page-level rhythm, major layout gutters, and large empty space between regions. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": "80px",
+      "$description": "Accretion UI spacing token 80 (80px). Use for page-level rhythm, major layout gutters, and large empty space between regions. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "96": {
+      "$type": "dimension",
+      "$value": "96px",
+      "$description": "Accretion UI spacing token 96 (96px). Use for page-level rhythm, major layout gutters, and large empty space between regions. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "112": {
+      "$type": "dimension",
+      "$value": "112px",
+      "$description": "Accretion UI spacing token 112 (112px). Use for page-level rhythm, major layout gutters, and large empty space between regions. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    },
+    "128": {
+      "$type": "dimension",
+      "$value": "128px",
+      "$description": "Accretion UI spacing token 128 (128px). Use for page-level rhythm, major layout gutters, and large empty space between regions. Accessibility: preserve enough spacing so interactive controls can maintain at least a 44x44px touch target with surrounding padding."
+    }
+  },
+  "size": {
+    "0": {
+      "$type": "dimension",
+      "$value": "{space.0}",
+      "$description": "Accretion UI size token 0 ({space.0}) aliases space.0 to keep dimensions synchronized with spacing. Use for compact icon or avatar dimensions inside dense UI components. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$description": "Accretion UI size token 2 ({space.2}) aliases space.2 to keep dimensions synchronized with spacing. Use for compact icon or avatar dimensions inside dense UI components. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$description": "Accretion UI size token 4 ({space.4}) aliases space.4 to keep dimensions synchronized with spacing. Use for compact icon or avatar dimensions inside dense UI components. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": "{space.8}",
+      "$description": "Accretion UI size token 8 ({space.8}) aliases space.8 to keep dimensions synchronized with spacing. Use for compact icon or avatar dimensions inside dense UI components. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "12": {
+      "$type": "dimension",
+      "$value": "{space.12}",
+      "$description": "Accretion UI size token 12 ({space.12}) aliases space.12 to keep dimensions synchronized with spacing. Use for compact icon or avatar dimensions inside dense UI components. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "16": {
+      "$type": "dimension",
+      "$value": "{space.16}",
+      "$description": "Accretion UI size token 16 ({space.16}) aliases space.16 to keep dimensions synchronized with spacing. Use for compact icon or avatar dimensions inside dense UI components. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "20": {
+      "$type": "dimension",
+      "$value": "{space.20}",
+      "$description": "Accretion UI size token 20 ({space.20}) aliases space.20 to keep dimensions synchronized with spacing. Use for compact icon or avatar dimensions inside dense UI components. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "24": {
+      "$type": "dimension",
+      "$value": "{space.24}",
+      "$description": "Accretion UI size token 24 ({space.24}) aliases space.24 to keep dimensions synchronized with spacing. Use for compact icon or avatar dimensions inside dense UI components. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "28": {
+      "$type": "dimension",
+      "$value": "{space.28}",
+      "$description": "Accretion UI size token 28 ({space.28}) aliases space.28 to keep dimensions synchronized with spacing. Use for common control heights and medium icon containers. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "32": {
+      "$type": "dimension",
+      "$value": "{space.32}",
+      "$description": "Accretion UI size token 32 ({space.32}) aliases space.32 to keep dimensions synchronized with spacing. Use for common control heights and medium icon containers. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "40": {
+      "$type": "dimension",
+      "$value": "{space.40}",
+      "$description": "Accretion UI size token 40 ({space.40}) aliases space.40 to keep dimensions synchronized with spacing. Use for common control heights and medium icon containers. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "48": {
+      "$type": "dimension",
+      "$value": "{space.48}",
+      "$description": "Accretion UI size token 48 ({space.48}) aliases space.48 to keep dimensions synchronized with spacing. Use for prominent controls, cards, and media thumbnails. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "56": {
+      "$type": "dimension",
+      "$value": "{space.56}",
+      "$description": "Accretion UI size token 56 ({space.56}) aliases space.56 to keep dimensions synchronized with spacing. Use for prominent controls, cards, and media thumbnails. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "64": {
+      "$type": "dimension",
+      "$value": "{space.64}",
+      "$description": "Accretion UI size token 64 ({space.64}) aliases space.64 to keep dimensions synchronized with spacing. Use for prominent controls, cards, and media thumbnails. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "72": {
+      "$type": "dimension",
+      "$value": "{space.72}",
+      "$description": "Accretion UI size token 72 ({space.72}) aliases space.72 to keep dimensions synchronized with spacing. Use for large visual containers, hero media, and spacious layout elements. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "80": {
+      "$type": "dimension",
+      "$value": "{space.80}",
+      "$description": "Accretion UI size token 80 ({space.80}) aliases space.80 to keep dimensions synchronized with spacing. Use for large visual containers, hero media, and spacious layout elements. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "96": {
+      "$type": "dimension",
+      "$value": "{space.96}",
+      "$description": "Accretion UI size token 96 ({space.96}) aliases space.96 to keep dimensions synchronized with spacing. Use for large visual containers, hero media, and spacious layout elements. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "112": {
+      "$type": "dimension",
+      "$value": "{space.112}",
+      "$description": "Accretion UI size token 112 ({space.112}) aliases space.112 to keep dimensions synchronized with spacing. Use for large visual containers, hero media, and spacious layout elements. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    },
+    "128": {
+      "$type": "dimension",
+      "$value": "{space.128}",
+      "$description": "Accretion UI size token 128 ({space.128}) aliases space.128 to keep dimensions synchronized with spacing. Use for large visual containers, hero media, and spacious layout elements. Accessibility: prefer size.48 or larger for primary touch targets, or add padding so the hit area remains at least 44x44px."
+    }
+  },
+  "radius": {
+    "none": {
+      "$type": "dimension",
+      "$value": "0px",
+      "$description": "Accretion UI corner radius none (0px). Use when sharp corners are required to match data-dense or tabular UI patterns. Accessibility: ensure rounded containers do not clip focus outlines; keep visible focus indicators intact around curved edges."
+    },
+    "xs": {
+      "$type": "dimension",
+      "$value": "2px",
+      "$description": "Accretion UI corner radius xs (2px). Use for subtle rounding on compact inputs and small badges. Accessibility: ensure rounded containers do not clip focus outlines; keep visible focus indicators intact around curved edges."
+    },
+    "sm": {
+      "$type": "dimension",
+      "$value": "4px",
+      "$description": "Accretion UI corner radius sm (4px). Use for standard small controls such as chips and compact buttons. Accessibility: ensure rounded containers do not clip focus outlines; keep visible focus indicators intact around curved edges."
+    },
+    "md": {
+      "$type": "dimension",
+      "$value": "8px",
+      "$description": "Accretion UI corner radius md (8px). Use as the default corner radius for most buttons, inputs, and cards. Accessibility: ensure rounded containers do not clip focus outlines; keep visible focus indicators intact around curved edges."
+    },
+    "lg": {
+      "$type": "dimension",
+      "$value": "12px",
+      "$description": "Accretion UI corner radius lg (12px). Use for larger cards, panels, and feature callouts. Accessibility: ensure rounded containers do not clip focus outlines; keep visible focus indicators intact around curved edges."
+    },
+    "xl": {
+      "$type": "dimension",
+      "$value": "16px",
+      "$description": "Accretion UI corner radius xl (16px). Use for large containers and hero-level components with softer geometry. Accessibility: ensure rounded containers do not clip focus outlines; keep visible focus indicators intact around curved edges."
+    },
+    "2xl": {
+      "$type": "dimension",
+      "$value": "24px",
+      "$description": "Accretion UI corner radius 2xl (24px). Use for oversized surfaces that need a distinctly soft shape language. Accessibility: ensure rounded containers do not clip focus outlines; keep visible focus indicators intact around curved edges."
+    },
+    "full": {
+      "$type": "dimension",
+      "$value": "9999px",
+      "$description": "Accretion UI corner radius full (9999px). Use for pills, circles, and fully rounded avatars or status indicators. Accessibility: ensure rounded containers do not clip focus outlines; keep visible focus indicators intact around curved edges."
+    }
+  },
+  "border": {
+    "width": {
+      "none": {
+        "$type": "dimension",
+        "$value": "0px",
+        "$description": "Accretion UI border width none (0px). Use only when visual boundaries are unnecessary or replaced by spacing/elevation cues. Accessibility: use a 2px-or-greater focus indicator for keyboard focus states where possible."
+      },
+      "xs": {
+        "$type": "dimension",
+        "$value": "1px",
+        "$description": "Accretion UI border width xs (1px). Use for subtle separators and low-emphasis outlines. Accessibility: use a 2px-or-greater focus indicator for keyboard focus states where possible."
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "2px",
+        "$description": "Accretion UI border width sm (2px). Use as the default outline thickness for most component borders and focus treatments. Accessibility: use a 2px-or-greater focus indicator for keyboard focus states where possible."
+      },
+      "md": {
+        "$type": "dimension",
+        "$value": "3px",
+        "$description": "Accretion UI border width md (3px). Use for emphasized boundaries, selected states, and stronger separators. Accessibility: use a 2px-or-greater focus indicator for keyboard focus states where possible."
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "4px",
+        "$description": "Accretion UI border width lg (4px). Use for high-emphasis outlines, drag/drop targets, and strong callout containers. Accessibility: use a 2px-or-greater focus indicator for keyboard focus states where possible."
+      }
+    }
+  },
+  "opacity": {
+    "0": {
+      "$type": "number",
+      "$value": 0,
+      "$description": "Accretion UI opacity 0 (0). Use to visually hide decorative layers while preserving layout or animation hooks. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "5": {
+      "$type": "number",
+      "$value": 0.05,
+      "$description": "Accretion UI opacity 5 (0.05). Use for subtle overlays, disabled affordances, and low-emphasis visual treatments. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "10": {
+      "$type": "number",
+      "$value": 0.1,
+      "$description": "Accretion UI opacity 10 (0.1). Use for subtle overlays, disabled affordances, and low-emphasis visual treatments. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "20": {
+      "$type": "number",
+      "$value": 0.2,
+      "$description": "Accretion UI opacity 20 (0.2). Use for subtle overlays, disabled affordances, and low-emphasis visual treatments. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "30": {
+      "$type": "number",
+      "$value": 0.3,
+      "$description": "Accretion UI opacity 30 (0.3). Use for medium-strength overlays and state layers that should not dominate content. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "40": {
+      "$type": "number",
+      "$value": 0.4,
+      "$description": "Accretion UI opacity 40 (0.4). Use for medium-strength overlays and state layers that should not dominate content. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "50": {
+      "$type": "number",
+      "$value": 0.5,
+      "$description": "Accretion UI opacity 50 (0.5). Use for medium-strength overlays and state layers that should not dominate content. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "60": {
+      "$type": "number",
+      "$value": 0.6,
+      "$description": "Accretion UI opacity 60 (0.6). Use for medium-strength overlays and state layers that should not dominate content. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "70": {
+      "$type": "number",
+      "$value": 0.7,
+      "$description": "Accretion UI opacity 70 (0.7). Use for strong overlays and near-solid surfaces with slight background bleed. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "80": {
+      "$type": "number",
+      "$value": 0.8,
+      "$description": "Accretion UI opacity 80 (0.8). Use for strong overlays and near-solid surfaces with slight background bleed. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "90": {
+      "$type": "number",
+      "$value": 0.9,
+      "$description": "Accretion UI opacity 90 (0.9). Use for strong overlays and near-solid surfaces with slight background bleed. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    },
+    "100": {
+      "$type": "number",
+      "$value": 1,
+      "$description": "Accretion UI opacity 100 (1). Use for fully opaque foreground and surface rendering. Accessibility: check blended contrast in context and avoid using opacity as the only signal for state changes."
+    }
+  },
+  "elevation": {
+    "0": {
+      "$type": "shadow",
+      "$value": "none",
+      "$description": "Accretion UI elevation level 0 (none). Use for flat surfaces that intentionally sit on the base plane. Accessibility: do not rely on shadow alone to show hierarchy; combine with spacing, borders, or labels when needed."
+    },
+    "1": {
+      "$type": "shadow",
+      "$value": "0px 1px 2px rgba(15,23,42,0.10), 0px 1px 1px rgba(15,23,42,0.06)",
+      "$description": "Accretion UI elevation level 1. Use to separate floating surfaces from the base layer with progressively stronger depth cues. Accessibility: ensure shadowed surfaces still provide clear boundaries and visible focus styles in high-contrast environments."
+    },
+    "2": {
+      "$type": "shadow",
+      "$value": "0px 2px 4px rgba(15,23,42,0.10), 0px 2px 2px rgba(15,23,42,0.08)",
+      "$description": "Accretion UI elevation level 2. Use to separate floating surfaces from the base layer with progressively stronger depth cues. Accessibility: ensure shadowed surfaces still provide clear boundaries and visible focus styles in high-contrast environments."
+    },
+    "3": {
+      "$type": "shadow",
+      "$value": "0px 4px 8px rgba(15,23,42,0.12), 0px 2px 4px rgba(15,23,42,0.08)",
+      "$description": "Accretion UI elevation level 3. Use to separate floating surfaces from the base layer with progressively stronger depth cues. Accessibility: ensure shadowed surfaces still provide clear boundaries and visible focus styles in high-contrast environments."
+    },
+    "4": {
+      "$type": "shadow",
+      "$value": "0px 8px 16px rgba(15,23,42,0.14), 0px 4px 8px rgba(15,23,42,0.10)",
+      "$description": "Accretion UI elevation level 4. Use to separate floating surfaces from the base layer with progressively stronger depth cues. Accessibility: ensure shadowed surfaces still provide clear boundaries and visible focus styles in high-contrast environments."
+    },
+    "5": {
+      "$type": "shadow",
+      "$value": "0px 12px 24px rgba(15,23,42,0.16), 0px 6px 12px rgba(15,23,42,0.12)",
+      "$description": "Accretion UI elevation level 5. Use to separate floating surfaces from the base layer with progressively stronger depth cues. Accessibility: ensure shadowed surfaces still provide clear boundaries and visible focus styles in high-contrast environments."
+    }
+  },
+  "motion": {
+    "duration": {
+      "instant": {
+        "$type": "duration",
+        "$value": "0ms",
+        "$description": "Accretion UI motion duration instant (0ms). Use when motion should be disabled, such as reduced-motion pathways or immediate state swaps. Accessibility: respect the user's reduced-motion preference by shortening or removing non-essential animations."
+      },
+      "fast": {
+        "$type": "duration",
+        "$value": "100ms",
+        "$description": "Accretion UI motion duration fast (100ms). Use for tiny feedback interactions like hover and pressed-state transitions. Accessibility: respect the user's reduced-motion preference by shortening or removing non-essential animations."
+      },
+      "normal": {
+        "$type": "duration",
+        "$value": "150ms",
+        "$description": "Accretion UI motion duration normal (150ms). Use for standard component transitions such as color, elevation, and opacity changes. Accessibility: respect the user's reduced-motion preference by shortening or removing non-essential animations."
+      },
+      "moderate": {
+        "$type": "duration",
+        "$value": "200ms",
+        "$description": "Accretion UI motion duration moderate (200ms). Use for medium-complexity transitions such as panel reveals or inline expansion. Accessibility: respect the user's reduced-motion preference by shortening or removing non-essential animations."
+      },
+      "slow": {
+        "$type": "duration",
+        "$value": "300ms",
+        "$description": "Accretion UI motion duration slow (300ms). Use for larger layout transitions where users need to track spatial movement. Accessibility: respect the user's reduced-motion preference by shortening or removing non-essential animations."
+      },
+      "slower": {
+        "$type": "duration",
+        "$value": "450ms",
+        "$description": "Accretion UI motion duration slower (450ms). Use sparingly for deliberate, high-context transitions like route-level changes. Accessibility: respect the user's reduced-motion preference by shortening or removing non-essential animations."
+      }
+    },
+    "easing": {
+      "standard": {
+        "$type": "cubicBezier",
+        "$value": "cubic-bezier(0.2, 0, 0, 1)",
+        "$description": "Accretion UI motion easing standard (cubic-bezier(0.2, 0, 0, 1)). Use as the default easing for most enter/exit and property transitions. Accessibility: pair easing with reduced motion fallbacks and avoid large, disorienting transitions for essential tasks."
+      },
+      "decelerate": {
+        "$type": "cubicBezier",
+        "$value": "cubic-bezier(0, 0, 0, 1)",
+        "$description": "Accretion UI motion easing decelerate (cubic-bezier(0, 0, 0, 1)). Use for incoming elements that should settle naturally as they appear. Accessibility: pair easing with reduced motion fallbacks and avoid large, disorienting transitions for essential tasks."
+      },
+      "accelerate": {
+        "$type": "cubicBezier",
+        "$value": "cubic-bezier(0.3, 0, 1, 1)",
+        "$description": "Accretion UI motion easing accelerate (cubic-bezier(0.3, 0, 1, 1)). Use for outgoing elements that should exit quickly and avoid lingering. Accessibility: pair easing with reduced motion fallbacks and avoid large, disorienting transitions for essential tasks."
+      },
+      "emphasized": {
+        "$type": "cubicBezier",
+        "$value": "cubic-bezier(0.05, 0.7, 0.1, 1)",
+        "$description": "Accretion UI motion easing emphasized (cubic-bezier(0.05, 0.7, 0.1, 1)). Use for high-attention transitions where motion needs stronger character. Accessibility: pair easing with reduced motion fallbacks and avoid large, disorienting transitions for essential tasks."
+      }
+    }
+  },
+  "z": {
+    "base": {
+      "$type": "number",
+      "$value": 0,
+      "$description": "Accretion UI z-index layer base (0). Use for the default document flow and non-elevated components. Accessibility: keep keyboard focus and screen-reader order aligned with visual layering, and trap focus only in deliberate modal contexts."
+    },
+    "raised": {
+      "$type": "number",
+      "$value": 10,
+      "$description": "Accretion UI z-index layer raised (10). Use for cards or elements that should sit just above base surfaces. Accessibility: keep keyboard focus and screen-reader order aligned with visual layering, and trap focus only in deliberate modal contexts."
+    },
+    "sticky": {
+      "$type": "number",
+      "$value": 100,
+      "$description": "Accretion UI z-index layer sticky (100). Use for sticky headers, pinned controls, and anchored navigation. Accessibility: keep keyboard focus and screen-reader order aligned with visual layering, and trap focus only in deliberate modal contexts."
+    },
+    "overlay": {
+      "$type": "number",
+      "$value": 400,
+      "$description": "Accretion UI z-index layer overlay (400). Use for scrims and overlays that sit above page content. Accessibility: keep keyboard focus and screen-reader order aligned with visual layering, and trap focus only in deliberate modal contexts."
+    },
+    "modal": {
+      "$type": "number",
+      "$value": 500,
+      "$description": "Accretion UI z-index layer modal (500). Use for modal dialogs and blocking interaction layers. Accessibility: keep keyboard focus and screen-reader order aligned with visual layering, and trap focus only in deliberate modal contexts."
+    },
+    "toast": {
+      "$type": "number",
+      "$value": 700,
+      "$description": "Accretion UI z-index layer toast (700). Use for transient notifications that must stay above dialogs. Accessibility: keep keyboard focus and screen-reader order aligned with visual layering, and trap focus only in deliberate modal contexts."
+    },
+    "tooltip": {
+      "$type": "number",
+      "$value": 800,
+      "$description": "Accretion UI z-index layer tooltip (800). Use for ephemeral hints and popovers that must appear above all other layers. Accessibility: keep keyboard focus and screen-reader order aligned with visual layering, and trap focus only in deliberate modal contexts."
+    }
+  },
+  "breakpoint": {
+    "sm": {
+      "$type": "breakpoint",
+      "$value": "480px",
+      "$description": "Accretion UI breakpoint sm (480px). Use for phone and narrow viewport layouts. Accessibility: ensure content reflows without horizontal scrolling at 320px CSS width and remains usable at up to 400% zoom."
+    },
+    "md": {
+      "$type": "breakpoint",
+      "$value": "768px",
+      "$description": "Accretion UI breakpoint md (768px). Use for tablet layouts and medium-width split content. Accessibility: ensure content reflows without horizontal scrolling at 320px CSS width and remains usable at up to 400% zoom."
+    },
+    "lg": {
+      "$type": "breakpoint",
+      "$value": "1024px",
+      "$description": "Accretion UI breakpoint lg (1024px). Use for small desktop and landscape tablet breakpoints. Accessibility: ensure content reflows without horizontal scrolling at 320px CSS width and remains usable at up to 400% zoom."
+    },
+    "xl": {
+      "$type": "breakpoint",
+      "$value": "1280px",
+      "$description": "Accretion UI breakpoint xl (1280px). Use for desktop layouts with expanded navigation and denser composition. Accessibility: ensure content reflows without horizontal scrolling at 320px CSS width and remains usable at up to 400% zoom."
+    },
+    "2xl": {
+      "$type": "breakpoint",
+      "$value": "1536px",
+      "$description": "Accretion UI breakpoint 2xl (1536px). Use for wide desktop layouts with multi-column content and generous gutters. Accessibility: ensure content reflows without horizontal scrolling at 320px CSS width and remains usable at up to 400% zoom."
+    }
+  }
+}

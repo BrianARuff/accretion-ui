@@ -1,0 +1,19 @@
+{
+  "name": "@accretion-ui/chromatic-react",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build-storybook": "storybook build",
+    "chromatic": "chromatic --build-script-name build-storybook",
+    "storybook": "storybook dev -p 6006"
+  },
+  "dependencies": {
+    "@storybook/addon-a11y": "10.2.16",
+    "@storybook/addon-docs": "10.2.16",
+    "@storybook/react-vite": "10.2.16",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "storybook": "10.2.16",
+    "vite": "7.3.1"
+  }
+}

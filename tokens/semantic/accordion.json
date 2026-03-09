@@ -1,0 +1,281 @@
+{
+  "component": {
+    "accordion": {
+      "root": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.white}",
+            "$description": "Accretion UI semantic token for accordion container background. Use for the accordion root surface across all size variants. Accessibility: maintain strong contrast with trigger text and panel text in both default and interactive states."
+          }
+        },
+        "border": {
+          "color": {
+            "$type": "color",
+            "$value": "{color.neutral.5}",
+            "$description": "Accretion UI semantic token for accordion root border color. Use for the outer boundary of grouped accordion items. Accessibility: pair with clear focus styling and avoid relying on border color alone for state communication."
+          },
+          "open": {
+            "$type": "color",
+            "$value": "{color.brand.7}",
+            "$description": "Accretion UI semantic token for accordion root open and focus border color. Use when an expanded item or focused trigger should highlight the outer wrapper. Accessibility: keep this color aligned with the trigger focus treatment so state change and focus remain visually coherent."
+          },
+          "width": {
+            "$type": "dimension",
+            "$value": "{border.width.xs}",
+            "$description": "Accretion UI semantic token for accordion root border width. Use as the default outline thickness around the accordion container. Accessibility: preserve visible boundaries at zoom and in high-contrast modes."
+          }
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{radius.md}",
+          "$description": "Accretion UI semantic token for accordion root corner radius. Use for the component-level container radius so all item separators remain visually aligned. Accessibility: ensure focus outlines are not clipped by rounded corners."
+        }
+      },
+      "focus": {
+        "ring": {
+          "color": {
+            "$type": "color",
+            "$value": "{color.brand.7}",
+            "$description": "Accretion UI semantic token for accordion trigger focus ring color. Use for keyboard focus-visible outlines on trigger controls. Accessibility: keep focus indicators clearly visible and avoid color-only state cues by pairing with ring width."
+          },
+          "width": {
+            "$type": "dimension",
+            "$value": "{border.width.sm}",
+            "$description": "Accretion UI semantic token for accordion trigger focus ring width. Use as the default focus outline thickness for trigger controls. Accessibility: 2px or greater helps preserve visibility under zoom and custom contrast settings."
+          },
+          "offset": {
+            "$type": "dimension",
+            "$value": "{border.width.md}",
+            "$description": "Accretion UI semantic token for accordion trigger focus ring offset. Use to separate trigger focus outlines from surrounding borders and neighboring items. Accessibility: maintain visible spacing between focus indicators and control edges."
+          }
+        }
+      },
+      "disabled": {
+        "opacity": {
+          "$type": "number",
+          "$value": "{opacity.50}",
+          "$description": "Accretion UI semantic token for disabled accordion opacity. Use for disabled root, item, or trigger presentation while retaining disabled semantics in markup. Accessibility: never use reduced opacity as the only disabled indicator."
+        }
+      },
+      "trigger": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.white}",
+            "$description": "Accretion UI semantic token for accordion trigger default background. Use for collapsed and resting trigger rows. Accessibility: ensure text contrast against this surface remains WCAG compliant."
+          },
+          "hover": {
+            "$type": "color",
+            "$value": "{color.brand.1}",
+            "$description": "Accretion UI semantic token for accordion trigger hover background. Use for pointer hover feedback on enabled triggers. Accessibility: do not rely on hover styling alone; focus-visible states must be independently clear."
+          },
+          "active": {
+            "$type": "color",
+            "$value": "{color.brand.2}",
+            "$description": "Accretion UI semantic token for accordion trigger active background. Use while pressing trigger controls. Accessibility: active styles should remain distinguishable from hover and open states."
+          },
+          "open": {
+            "$type": "color",
+            "$value": "{color.brand.1}",
+            "$description": "Accretion UI semantic token for accordion trigger open-state background. Use when a trigger controls an expanded panel. Accessibility: reinforce open state with ARIA attributes and panel visibility changes, not color alone."
+          }
+        },
+        "foreground": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.neutral.11}",
+            "$description": "Accretion UI semantic token for accordion trigger default text and icon color. Use for label content in collapsed and neutral trigger states. Accessibility: maintain sufficient contrast on all trigger backgrounds."
+          },
+          "open": {
+            "$type": "color",
+            "$value": "{color.brand.9}",
+            "$description": "Accretion UI semantic token for accordion trigger open-state text and icon color. Use for the expanded trigger state to increase information scent. Accessibility: ensure open-state contrast remains compliant with associated background colors."
+          }
+        },
+        "font": {
+          "size": {
+            "$type": "dimension",
+            "$value": "{font.size.md}",
+            "$description": "Accretion UI semantic token for accordion trigger text size. Use for trigger labels across density variants unless responsive overrides are required. Accessibility: keep trigger labels readable at common zoom levels and minimum viewport widths."
+          },
+          "weight": {
+            "$type": "number",
+            "$value": "{font.weight.semibold}",
+            "$description": "Accretion UI semantic token for accordion trigger text weight. Use for trigger labels to preserve hierarchy over panel body content. Accessibility: maintain legibility and avoid relying on weight changes alone to indicate state."
+          },
+          "lineHeight": {
+            "$type": "dimension",
+            "$value": "{font.lineHeight.md}",
+            "$description": "Accretion UI semantic token for accordion trigger line height. Use to align trigger typography with body and panel text rhythm. Accessibility: preserve readable line spacing for multi-line trigger labels."
+          }
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{space.12}",
+          "$description": "Accretion UI semantic token for accordion trigger content gap. Use spacing between trigger label text and optional indicator icons. Accessibility: keep icon/text relationships clear without shrinking touch targets."
+        }
+      },
+      "panel": {
+        "background": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.neutral.1}",
+            "$description": "Accretion UI semantic token for accordion panel background. Use for expanded content regions under each trigger. Accessibility: ensure panel text contrast remains compliant with this background token."
+          }
+        },
+        "foreground": {
+          "default": {
+            "$type": "color",
+            "$value": "{color.neutral.10}",
+            "$description": "Accretion UI semantic token for accordion panel text color. Use for panel body copy, links, and supporting metadata. Accessibility: verify at least 4.5:1 contrast for default body text where feasible."
+          }
+        },
+        "border": {
+          "color": {
+            "$type": "color",
+            "$value": "{color.neutral.4}",
+            "$description": "Accretion UI semantic token for accordion panel separator color. Use for top borders that separate trigger and panel content. Accessibility: keep separators supplemental to structure and do not use them as the sole grouping cue."
+          }
+        }
+      },
+      "sizeVariant": {
+        "compact": {
+          "trigger": {
+            "minHeight": {
+              "$type": "dimension",
+              "$value": "{size.40}",
+              "$description": "Accretion UI semantic token for compact accordion trigger minimum height. Use for dense interfaces where vertical space is constrained. Accessibility: verify touch target size remains usable or provide additional hit-area padding."
+            },
+            "paddingBlock": {
+              "$type": "dimension",
+              "$value": "{space.12}",
+              "$description": "Accretion UI semantic token for compact accordion trigger block padding. Use to reduce vertical spacing in compact density mode. Accessibility: keep trigger hit areas easy to activate with pointer and keyboard users."
+            },
+            "paddingInline": {
+              "$type": "dimension",
+              "$value": "{space.16}",
+              "$description": "Accretion UI semantic token for compact accordion trigger inline padding. Use to preserve readable spacing around text in compact layouts. Accessibility: maintain enough whitespace for legible scanning at zoom."
+            },
+            "gap": {
+              "$type": "dimension",
+              "$value": "{space.8}",
+              "$description": "Accretion UI semantic token for compact accordion trigger gap. Use for icon/text spacing in compact mode. Accessibility: keep icon and label separation clear without creating ambiguous click targets."
+            }
+          },
+          "panel": {
+            "paddingInline": {
+              "$type": "dimension",
+              "$value": "{space.16}",
+              "$description": "Accretion UI semantic token for compact accordion panel inline padding. Use for dense panel content layouts. Accessibility: preserve sufficient reading margin for wrapped text content."
+            },
+            "paddingBlockStart": {
+              "$type": "dimension",
+              "$value": "{space.12}",
+              "$description": "Accretion UI semantic token for compact accordion panel start padding. Use to keep equal top and bottom breathing room by default in compact mode. Accessibility: preserve enough vertical whitespace for comfortable reading."
+            },
+            "paddingBlockEnd": {
+              "$type": "dimension",
+              "$value": "{space.12}",
+              "$description": "Accretion UI semantic token for compact accordion panel end padding. Use to maintain comfortable spacing after panel content in compact mode. Accessibility: avoid crowded endings that reduce readability."
+            }
+          }
+        },
+        "comfortable": {
+          "trigger": {
+            "minHeight": {
+              "$type": "dimension",
+              "$value": "{size.48}",
+              "$description": "Accretion UI semantic token for comfortable accordion trigger minimum height. Use as the default density for mixed desktop and touch usage. Accessibility: aligns with recommended target sizes for primary interactive controls."
+            },
+            "paddingBlock": {
+              "$type": "dimension",
+              "$value": "{space.16}",
+              "$description": "Accretion UI semantic token for comfortable accordion trigger block padding. Use for default trigger vertical spacing. Accessibility: preserve readable line wrapping and pointer target stability."
+            },
+            "paddingInline": {
+              "$type": "dimension",
+              "$value": "{space.20}",
+              "$description": "Accretion UI semantic token for comfortable accordion trigger inline padding. Use for default horizontal trigger spacing. Accessibility: keep labels away from borders for easier scanning."
+            },
+            "gap": {
+              "$type": "dimension",
+              "$value": "{space.12}",
+              "$description": "Accretion UI semantic token for comfortable accordion trigger gap. Use as the default spacing between labels and indicator icons. Accessibility: supports clear icon-to-label association without crowding."
+            }
+          },
+          "panel": {
+            "paddingInline": {
+              "$type": "dimension",
+              "$value": "{space.20}",
+              "$description": "Accretion UI semantic token for comfortable accordion panel inline padding. Use for default panel text margins. Accessibility: helps preserve readability for longer body copy."
+            },
+            "paddingBlockStart": {
+              "$type": "dimension",
+              "$value": "{space.16}",
+              "$description": "Accretion UI semantic token for comfortable accordion panel start padding. Use as the default top spacing for expanded panels so block padding remains even by default. Accessibility: keep enough vertical whitespace for legible text blocks."
+            },
+            "paddingBlockEnd": {
+              "$type": "dimension",
+              "$value": "{space.16}",
+              "$description": "Accretion UI semantic token for comfortable accordion panel end padding. Use as default bottom spacing for expanded panels. Accessibility: keep breathing room below panel content for visual clarity."
+            }
+          }
+        },
+        "spacious": {
+          "trigger": {
+            "minHeight": {
+              "$type": "dimension",
+              "$value": "{size.56}",
+              "$description": "Accretion UI semantic token for spacious accordion trigger minimum height. Use for touch-first and content-led layouts that need larger controls. Accessibility: larger targets can improve activation success for motor and low-vision users."
+            },
+            "paddingBlock": {
+              "$type": "dimension",
+              "$value": "{space.20}",
+              "$description": "Accretion UI semantic token for spacious accordion trigger block padding. Use to increase vertical rhythm in spacious mode. Accessibility: provides extra breathing room for multiline labels and enlarged text."
+            },
+            "paddingInline": {
+              "$type": "dimension",
+              "$value": "{space.24}",
+              "$description": "Accretion UI semantic token for spacious accordion trigger inline padding. Use for larger-screen layouts where extra horizontal space improves scanning. Accessibility: supports readability with increased zoom and touch usage."
+            },
+            "gap": {
+              "$type": "dimension",
+              "$value": "{space.16}",
+              "$description": "Accretion UI semantic token for spacious accordion trigger gap. Use for icon/text separation in spacious mode. Accessibility: preserves clear structure and prevents visual crowding."
+            }
+          },
+          "panel": {
+            "paddingInline": {
+              "$type": "dimension",
+              "$value": "{space.24}",
+              "$description": "Accretion UI semantic token for spacious accordion panel inline padding. Use for wider text margins in generous layouts. Accessibility: improved line-length control can aid readability for longer content."
+            },
+            "paddingBlockStart": {
+              "$type": "dimension",
+              "$value": "{space.20}",
+              "$description": "Accretion UI semantic token for spacious accordion panel start padding. Use to preserve even vertical breathing room in spacious mode. Accessibility: additional whitespace can reduce visual fatigue in dense information panels."
+            },
+            "paddingBlockEnd": {
+              "$type": "dimension",
+              "$value": "{space.20}",
+              "$description": "Accretion UI semantic token for spacious accordion panel end padding. Use for larger content rhythm in spacious mode. Accessibility: additional whitespace can reduce visual fatigue in dense information panels."
+            }
+          }
+        }
+      },
+      "motion": {
+        "duration": {
+          "$type": "duration",
+          "$value": "{motion.duration.moderate}",
+          "$description": "Accretion UI semantic token for accordion expand/collapse duration. Use for panel reveal and collapse transitions. Accessibility: respect reduced-motion preferences by shortening or removing transition duration."
+        },
+        "easing": {
+          "$type": "cubicBezier",
+          "$value": "{motion.easing.standard}",
+          "$description": "Accretion UI semantic token for accordion expand/collapse easing. Use for consistent motion timing across trigger and panel transitions. Accessibility: preserve orientation while minimizing disorienting movement."
+        }
+      }
+    }
+  }
+}

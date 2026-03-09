@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "declarationMap": true,
+    "types": []
+  },
+  "exclude": [
+    "src/generated/**/*",
+    "**/*.spec.ts",
+    "**/*.test.ts"
+  ]
+}

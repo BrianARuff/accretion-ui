@@ -1,0 +1,128 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "projects": {
+    "accretion-angular": {
+      "projectType": "library",
+      "root": "packages/angular",
+      "sourceRoot": "packages/angular/src",
+      "prefix": "ac",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "packages/angular/ng-package.json",
+            "tsConfig": "packages/angular/tsconfig.lib.json"
+          }
+        }
+      }
+    },
+    "angular-ssr": {
+      "projectType": "application",
+      "root": "smoke-apps/angular-ssr",
+      "sourceRoot": "smoke-apps/angular-ssr/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "smoke-apps/angular-ssr/src/main.ts",
+            "index": "smoke-apps/angular-ssr/src/index.html",
+            "inlineStyleLanguage": "css",
+            "outputMode": "server",
+            "outputPath": {
+              "base": "smoke-apps/angular-ssr/dist/angular-ssr"
+            },
+            "polyfills": ["zone.js"],
+            "prerender": false,
+            "security": {
+              "allowedHosts": ["localhost", "127.0.0.1"]
+            },
+            "server": "smoke-apps/angular-ssr/src/main.server.ts",
+            "ssr": {
+              "entry": "smoke-apps/angular-ssr/src/server.ts"
+            },
+            "styles": [
+              "packages/angular/src/styles.css",
+              "smoke-apps/angular-ssr/src/styles.css"
+            ],
+            "tsConfig": "smoke-apps/angular-ssr/tsconfig.app.json"
+          },
+          "configurations": {
+            "development": {
+              "extractLicenses": false,
+              "optimization": false,
+              "sourceMap": true
+            },
+            "production": {
+              "budgets": [
+                {
+                  "maximumWarning": "300kB",
+                  "maximumError": "500kB",
+                  "type": "initial"
+                },
+                {
+                  "maximumWarning": "8kB",
+                  "maximumError": "12kB",
+                  "type": "anyComponentStyle"
+                }
+              ],
+              "outputHashing": "all"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "development": {
+              "buildTarget": "angular-ssr:build:development"
+            },
+            "production": {
+              "buildTarget": "angular-ssr:build:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "test": {
+          "builder": "@angular/build:unit-test",
+          "options": {
+            "buildTarget": "angular-ssr:build:development",
+            "runner": "vitest",
+            "runnerConfig": false,
+            "tsConfig": "smoke-apps/angular-ssr/tsconfig.spec.json"
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "angular-ssr:build:development",
+            "ci": true,
+            "compodoc": false,
+            "configDir": "chromatic/angular/.storybook",
+            "host": "127.0.0.1",
+            "open": false,
+            "port": 6007,
+            "styles": [
+              "packages/angular/src/styles.css"
+            ],
+            "tsConfig": "chromatic/angular/tsconfig.storybook.json"
+          }
+        },
+        "build-storybook": {
+          "builder": "@storybook/angular:build-storybook",
+          "options": {
+            "browserTarget": "angular-ssr:build:development",
+            "compodoc": false,
+            "configDir": "chromatic/angular/.storybook",
+            "outputDir": "chromatic/angular/storybook-static",
+            "styles": [
+              "packages/angular/src/styles.css"
+            ],
+            "tsConfig": "chromatic/angular/tsconfig.storybook.json"
+          }
+        }
+      }
+    }
+  }
+}

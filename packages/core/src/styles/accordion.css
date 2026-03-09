@@ -1,0 +1,232 @@
+/* This file is generated from tokens/primitives.json and tokens/semantic/accordion.json. */
+:where(.ac-accordion) {
+  --ac-accordion-root-background: #FFFFFF;
+  --ac-accordion-root-border-color: #BDCCE4;
+  --ac-accordion-root-border-width: 1px;
+  --ac-accordion-root-border-color-open: #07A6C8;
+  --ac-accordion-root-radius: 8px;
+  --ac-accordion-focus-ring-color: #07A6C8;
+  --ac-accordion-focus-ring-width: 2px;
+  --ac-accordion-focus-ring-offset: 3px;
+  --ac-accordion-disabled-opacity: 0.5;
+  --ac-accordion-trigger-background: #FFFFFF;
+  --ac-accordion-trigger-background-hover: #F8FDFF;
+  --ac-accordion-trigger-background-active: #E7F9FF;
+  --ac-accordion-trigger-background-open: #F8FDFF;
+  --ac-accordion-trigger-foreground: #27364B;
+  --ac-accordion-trigger-foreground-open: #02657C;
+  --ac-accordion-trigger-font-size: 16px;
+  --ac-accordion-trigger-font-weight: 600;
+  --ac-accordion-trigger-line-height: 24px;
+  --ac-accordion-trigger-gap: 12px;
+  --ac-accordion-panel-background: #F8FBFF;
+  --ac-accordion-panel-foreground: #374B66;
+  --ac-accordion-panel-border-color: #D4DFF0;
+  --ac-accordion-item-border-color: #D4DFF0;
+  --ac-accordion-motion-duration: 200ms;
+  --ac-accordion-motion-easing: cubic-bezier(0.2, 0, 0, 1);
+  --ac-accordion-trigger-min-height: 48px;
+  --ac-accordion-trigger-padding-block: 16px;
+  --ac-accordion-trigger-padding-inline: 20px;
+  --ac-accordion-trigger-gap-local: 12px;
+  --ac-accordion-root-padding: 12px;
+  --ac-accordion-panel-padding-inline: 20px;
+  --ac-accordion-panel-padding-block-start: 16px;
+  --ac-accordion-panel-padding-block-end: 16px;
+  display: block;
+  margin: 0;
+  border: var(--ac-accordion-root-border-width) solid var(--ac-accordion-root-border-color);
+  border-radius: var(--ac-accordion-root-radius);
+  background: var(--ac-accordion-root-background);
+  box-shadow: 0 0 0 0 transparent;
+  color: var(--ac-accordion-panel-foreground);
+  overflow: clip;
+  padding: var(--ac-accordion-root-padding);
+  transition:
+    border-color var(--ac-accordion-motion-duration) var(--ac-accordion-motion-easing),
+    box-shadow var(--ac-accordion-motion-duration) var(--ac-accordion-motion-easing);
+}
+
+:where(.ac-accordion[data-state='open']) {
+  border-color: var(--ac-accordion-root-border-color-open);
+}
+
+:where(.ac-accordion:focus-within) {
+  border-color: var(--ac-accordion-root-border-color-open);
+}
+
+:where(.ac-accordion[data-size='compact']) {
+  --ac-accordion-trigger-min-height: 40px;
+  --ac-accordion-trigger-padding-block: 12px;
+  --ac-accordion-trigger-padding-inline: 16px;
+  --ac-accordion-trigger-gap-local: 8px;
+  --ac-accordion-root-padding: 8px;
+  --ac-accordion-panel-padding-inline: 16px;
+  --ac-accordion-panel-padding-block-start: 12px;
+  --ac-accordion-panel-padding-block-end: 12px;
+}
+
+:where(.ac-accordion[data-size='spacious']) {
+  --ac-accordion-trigger-min-height: 56px;
+  --ac-accordion-trigger-padding-block: 20px;
+  --ac-accordion-trigger-padding-inline: 24px;
+  --ac-accordion-trigger-gap-local: 16px;
+  --ac-accordion-root-padding: 16px;
+  --ac-accordion-panel-padding-inline: 24px;
+  --ac-accordion-panel-padding-block-start: 20px;
+  --ac-accordion-panel-padding-block-end: 20px;
+}
+
+:where(.ac-accordion__item) {
+  display: block;
+  margin: 0;
+  border: 1px solid var(--ac-accordion-item-border-color);
+  background: var(--ac-accordion-trigger-background);
+  overflow: clip;
+}
+
+:where(.ac-accordion__item:only-child) {
+  border-radius: calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+}
+
+:where(.ac-accordion__item:first-child:not(:only-child)) {
+  border-radius:
+    calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width))
+    calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width))
+    0
+    0;
+}
+
+:where(.ac-accordion__item:last-child:not(:only-child)) {
+  border-radius:
+    0
+    0
+    calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width))
+    calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+}
+
+:where(.ac-accordion__item + .ac-accordion__item) {
+  margin-top: calc(var(--ac-accordion-root-padding) / 2);
+}
+
+:where(.ac-accordion__header) {
+  margin: 0;
+}
+
+:where(.ac-accordion__trigger) {
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  min-height: var(--ac-accordion-trigger-min-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ac-accordion-trigger-gap-local, var(--ac-accordion-trigger-gap));
+  border: 0;
+  border-radius: 0;
+  background: var(--ac-accordion-trigger-background);
+  color: var(--ac-accordion-trigger-foreground);
+  cursor: pointer;
+  font: inherit;
+  font-size: var(--ac-accordion-trigger-font-size);
+  font-weight: var(--ac-accordion-trigger-font-weight);
+  line-height: var(--ac-accordion-trigger-line-height);
+  padding-block: var(--ac-accordion-trigger-padding-block);
+  padding-inline: var(--ac-accordion-trigger-padding-inline);
+  position: relative;
+  text-align: left;
+  transition:
+    background-color var(--ac-accordion-motion-duration) var(--ac-accordion-motion-easing),
+    color var(--ac-accordion-motion-duration) var(--ac-accordion-motion-easing);
+}
+
+:where(.ac-accordion__item:only-child > .ac-accordion__header > .ac-accordion__trigger:not([data-state='open'])) {
+  border-radius: calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+}
+
+:where(.ac-accordion__item:only-child > .ac-accordion__header > .ac-accordion__trigger[data-state='open']),
+:where(.ac-accordion__item:first-child:not(:only-child) > .ac-accordion__header > .ac-accordion__trigger) {
+  border-top-left-radius: calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+  border-top-right-radius: calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+}
+
+:where(.ac-accordion__item:last-child:not(:only-child) > .ac-accordion__header > .ac-accordion__trigger:not([data-state='open'])) {
+  border-bottom-left-radius: calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+  border-bottom-right-radius: calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+}
+
+:where(.ac-accordion__trigger)::after {
+  box-sizing: border-box;
+  content: '';
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-block-end: 2px solid currentColor;
+  border-inline-end: 2px solid currentColor;
+  flex: 0 0 auto;
+  transform: translateY(-1px) rotate(45deg);
+  transition: transform var(--ac-accordion-motion-duration) var(--ac-accordion-motion-easing);
+}
+
+:where(.ac-accordion__trigger:hover:not([data-disabled])) {
+  background: var(--ac-accordion-trigger-background-hover);
+}
+
+:where(.ac-accordion__trigger:active:not([data-disabled])) {
+  background: var(--ac-accordion-trigger-background-active);
+}
+
+:where(.ac-accordion__trigger[data-state='open']) {
+  background: var(--ac-accordion-trigger-background-open);
+  color: var(--ac-accordion-trigger-foreground-open);
+}
+
+:where(.ac-accordion__trigger[data-state='open'])::after {
+  transform: translateY(2px) rotate(-135deg);
+}
+
+:where(.ac-accordion__trigger:focus-visible),
+:where(.ac-accordion__trigger[data-state='open']:focus) {
+  outline: var(--ac-accordion-focus-ring-width) solid var(--ac-accordion-focus-ring-color);
+  outline-offset: calc(
+    -1 * (
+      var(--ac-accordion-focus-ring-width) +
+      var(--ac-accordion-focus-ring-offset)
+    )
+  );
+  z-index: 1;
+}
+
+:where(.ac-accordion__trigger[data-disabled]),
+:where(.ac-accordion__item[data-disabled]),
+:where(.ac-accordion[data-disabled]) :where(.ac-accordion__trigger) {
+  cursor: not-allowed;
+  opacity: var(--ac-accordion-disabled-opacity);
+}
+
+:where(.ac-accordion__panel) {
+  box-sizing: border-box;
+  background: var(--ac-accordion-panel-background);
+  border-top: 1px solid var(--ac-accordion-panel-border-color);
+  color: var(--ac-accordion-panel-foreground);
+  padding-inline: var(--ac-accordion-panel-padding-inline);
+  padding-block-start: var(--ac-accordion-panel-padding-block-start);
+  padding-block-end: var(--ac-accordion-panel-padding-block-end);
+}
+
+:where(.ac-accordion__item:only-child > .ac-accordion__panel),
+:where(.ac-accordion__item:last-child:not(:only-child) > .ac-accordion__panel) {
+  border-bottom-left-radius: calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+  border-bottom-right-radius: calc(var(--ac-accordion-root-radius) - var(--ac-accordion-root-border-width));
+}
+
+:where(.ac-accordion__panel[hidden]) {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.ac-accordion__trigger),
+  :where(.ac-accordion__trigger)::after {
+    transition: none;
+  }
+}
+

@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/out-tsc/chromatic-angular-storybook",
+    "types": ["node"]
+  },
+  "include": [
+    ".storybook/**/*.ts",
+    "src/**/*.ts",
+    "../../packages/angular/src/public-api.ts",
+    "../../packages/angular/src/lib/**/*.ts",
+    "../../packages/core/src/logic/**/*.ts",
+    "../../packages/core/src/types/**/*.ts"
+  ],
+  "exclude": [
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "../../testing/**/*",
+    "../../smoke-apps/**/*"
+  ]
+}
