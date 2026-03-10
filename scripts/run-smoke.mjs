@@ -1,4 +1,10 @@
-import { runCommand, startServer, stopServer, waitForUrl } from './lib/runtime.mjs';
+import {
+  ensurePortAvailable,
+  runCommand,
+  startServer,
+  stopServer,
+  waitForUrl,
+} from './lib/runtime.mjs';
 
 const target = process.argv[2];
 
@@ -40,6 +46,14 @@ if (!target || !(target in targetConfig)) {
 }
 
 const config = targetConfig[target];
+
+ensurePortAvailable({
+  matchers:
+    target === 'react'
+      ? ['next start --port 3000', '@accretion-ui/react-smoke']
+      : ['angular-ssr/dist/angular-ssr/server/server.mjs', 'angular-ssr'],
+  port: target === 'react' ? 3000 : 4300,
+});
 
 for (const [command, args] of config.buildSteps) {
   runCommand({ args, command });

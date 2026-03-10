@@ -1,4 +1,11 @@
-import { runCommand, startServer, stopServer, waitForUrl } from './lib/runtime.mjs';
+import {
+  ensurePortAvailable,
+  repoRoot,
+  runCommand,
+  startServer,
+  stopServer,
+  waitForUrl,
+} from './lib/runtime.mjs';
 
 const servers = [
   {
@@ -28,6 +35,27 @@ const servers = [
     url: 'http://127.0.0.1:6007',
   },
 ];
+
+for (const { port, matchers } of [
+  {
+    matchers: ['next dev --port 3000', '@accretion-ui/react-smoke'],
+    port: 3000,
+  },
+  {
+    matchers: ['ng serve angular-ssr', 'angular-ssr'],
+    port: 4300,
+  },
+  {
+    matchers: ['storybook dev -p 6006', '@accretion-ui/chromatic-react', `${repoRoot}/node_modules/.bin/storybook`],
+    port: 6006,
+  },
+  {
+    matchers: ['ng run angular-ssr:storybook', '@accretion-ui/chromatic-angular'],
+    port: 6007,
+  },
+]) {
+  ensurePortAvailable({ matchers, port });
+}
 
 const runningServers = servers.map((server) => startServer(server));
 
