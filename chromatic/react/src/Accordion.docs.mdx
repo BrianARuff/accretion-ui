@@ -40,13 +40,33 @@ Use Accordion when people need to progressively reveal supporting detail without
     </tr>
     <tr>
       <td><code>Accordion</code></td>
-      <td><code>multiple</code>, <code>collapsible</code></td>
-      <td>Switches between single and multiple expansion behavior and controls whether the last open item can collapse.</td>
+      <td><code>multiple</code></td>
+      <td>Allows more than one item to stay open at the same time.</td>
     </tr>
     <tr>
       <td><code>Accordion</code></td>
-      <td><code>disabled</code>, <code>loopFocus</code>, <code>hiddenUntilFound</code>, <code>size</code></td>
-      <td>Disables the full control, keeps keyboard navigation looping, enables find-in-page reveal behavior, and selects density.</td>
+      <td><code>collapsible</code></td>
+      <td>Allows the last open item to collapse in single mode.</td>
+    </tr>
+    <tr>
+      <td><code>Accordion</code></td>
+      <td><code>disabled</code></td>
+      <td>Disables the full control and prevents interaction for every item.</td>
+    </tr>
+    <tr>
+      <td><code>Accordion</code></td>
+      <td><code>loopFocus</code></td>
+      <td>Keeps roving keyboard navigation looping from the last trigger back to the first and vice versa.</td>
+    </tr>
+    <tr>
+      <td><code>Accordion</code></td>
+      <td><code>hiddenUntilFound</code></td>
+      <td>Lets browser find-in-page reveal closed panels when supported by the platform.</td>
+    </tr>
+    <tr>
+      <td><code>Accordion</code></td>
+      <td><code>size</code></td>
+      <td>Selects the density tokens that drive spacing, padding, and trigger height.</td>
     </tr>
     <tr>
       <td><code>AccordionItem</code></td>
@@ -55,8 +75,13 @@ Use Accordion when people need to progressively reveal supporting detail without
     </tr>
     <tr>
       <td><code>AccordionItem</code></td>
-      <td><code>disabled</code>, <code>onOpenChange</code></td>
-      <td>Disables a single item or reports when that item opens or closes.</td>
+      <td><code>disabled</code></td>
+      <td>Disables a single item without affecting the rest of the Accordion.</td>
+    </tr>
+    <tr>
+      <td><code>AccordionItem</code></td>
+      <td><code>onOpenChange</code></td>
+      <td>Reports when that item opens or closes.</td>
     </tr>
     <tr>
       <td><code>AccordionHeader</code></td>
@@ -70,8 +95,18 @@ Use Accordion when people need to progressively reveal supporting detail without
     </tr>
     <tr>
       <td><code>AccordionPanel</code></td>
-      <td>Native <code>div</code> attributes, <code>hiddenUntilFound</code></td>
-      <td>Accepts normal panel attributes and can keep closed content discoverable for browser find-in-page behavior.</td>
+      <td><code>hiddenUntilFound</code></td>
+      <td>Keeps closed content discoverable for browser find-in-page when requested.</td>
+    </tr>
+    <tr>
+      <td><code>AccordionPanel</code></td>
+      <td><code>keepMounted</code></td>
+      <td>Keeps closed panel content mounted instead of unmounting it when the item collapses.</td>
+    </tr>
+    <tr>
+      <td><code>AccordionPanel</code></td>
+      <td>Native <code>div</code> attributes</td>
+      <td>Accepts normal panel host attributes while preserving the Accordion ARIA relationship.</td>
     </tr>
   </tbody>
 </table>
@@ -81,6 +116,7 @@ Use Accordion when people need to progressively reveal supporting detail without
 - Prefer `button` semantics for the trigger content and keep labels concise enough to scan quickly.
 - Use controlled mode when the surrounding page needs to open sections programmatically.
 - Use `multiple` only when comparing sections side by side is genuinely useful.
+- Leave `keepMounted` at its default `false` unless hidden content must stay searchable, measurable, or available for animation orchestration.
 - Provide a stable root `id` when multiple accordions can appear on the same view.
 
 ## Accessibility Guidance
@@ -88,6 +124,7 @@ Use Accordion when people need to progressively reveal supporting detail without
 - Keyboard users can move between triggers with `ArrowUp`, `ArrowDown`, `Home`, and `End`.
 - Triggers expose `aria-expanded`, `aria-controls`, and disabled state consistently.
 - Panels expose `role="region"` and `aria-labelledby` so screen readers can connect each panel to its trigger.
+- Pointer and keyboard activation keep focus on the trigger that changed state so the visible focus indicator stays anchored to the active control.
 - Keep trigger text meaningful out of context so screen reader rotor/navigation lists stay useful.
 
 ## Styling Hooks
@@ -132,7 +169,7 @@ The shared stylesheet exposes CSS variables for focus ring, spacing, and motion.
     </tr>
     <tr>
       <td><code>--ac-accordion-focus-ring-color</code></td>
-      <td>Defines the keyboard focus-visible outline color used on triggers.</td>
+      <td>Defines the focus outline color used on triggers after pointer or keyboard activation.</td>
     </tr>
     <tr>
       <td><code>--ac-accordion-focus-ring-offset</code></td>

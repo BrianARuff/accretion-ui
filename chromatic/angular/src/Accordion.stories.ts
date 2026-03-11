@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import {
-  AccordionHeaderDirective,
-  AccordionItemDirective,
-  AccordionPanelDirective,
-  AccordionRootDirective,
-  AccordionTriggerDirective,
+  Accordion,
+  AccordionHeader,
+  AccordionItem,
+  AccordionPanel,
+  AccordionTrigger,
 } from '../../../packages/angular/src/public-api';
 
 const meta: Meta = {
@@ -13,11 +13,11 @@ const meta: Meta = {
       ...story(),
       moduleMetadata: {
         imports: [
-          AccordionRootDirective,
-          AccordionItemDirective,
-          AccordionHeaderDirective,
-          AccordionTriggerDirective,
-          AccordionPanelDirective,
+          Accordion,
+          AccordionItem,
+          AccordionHeader,
+          AccordionTrigger,
+          AccordionPanel,
         ],
       },
     }),
@@ -26,7 +26,7 @@ const meta: Meta = {
     docs: {
       description: {
         component:
-          'Native Angular Accordion directives applied directly to host elements for one-element-per-part rendering.',
+          'Native Angular Accordion primitives applied directly to host elements for one-element-per-part rendering.',
       },
     },
   },

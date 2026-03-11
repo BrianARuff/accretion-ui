@@ -1,5 +1,6 @@
+import { NgIf } from '@angular/common';
 import {
-  Directive,
+  Component,
   ElementRef,
   HostBinding,
   Input,
@@ -7,13 +8,20 @@ import {
 } from '@angular/core';
 import { AccordionItemDirective } from './accordion-item.directive';
 
-@Directive({
+@Component({
   exportAs: 'acAccordionPanel',
+  imports: [NgIf],
   selector: '[acAccordionPanel]',
   standalone: true,
+  template: `
+    <ng-container *ngIf="shouldRenderContent">
+      <ng-content />
+    </ng-container>
+  `,
 })
 export class AccordionPanelDirective {
   @Input({ transform: booleanAttribute }) hiddenUntilFound?: boolean;
+  @Input({ transform: booleanAttribute }) keepMounted = false;
 
   @HostBinding('class.ac-accordion__panel') readonly panelClass = true;
 
@@ -68,6 +76,10 @@ export class AccordionPanelDirective {
     private readonly elementRef: ElementRef<HTMLElement>,
     readonly item: AccordionItemDirective,
   ) {}
+
+  get shouldRenderContent(): boolean {
+    return this.item.open || this.keepMounted || this.useHiddenUntilFound;
+  }
 
   private get useHiddenUntilFound(): boolean {
     return this.hiddenUntilFound ?? this.item.accordion.hiddenUntilFound;

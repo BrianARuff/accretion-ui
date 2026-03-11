@@ -43,6 +43,8 @@ export function Example() {
 }
 ```
 
+Closed panel content is not mounted by default. Set `keepMounted` on `AccordionPanel` when a hidden panel must stay in the DOM.
+
 ## Styling Requirements
 
 The package expects `@accretion-ui/react/styles.css` to be loaded before rendering the Accordion. The stylesheet exposes CSS variables such as:
@@ -61,7 +63,7 @@ The package expects `@accretion-ui/react/styles.css` to be loaded before renderi
 The package is designed for client-first usage with SSR validation included in this repo through the Next.js smoke app.
 
 - Deterministic item ids render on the server when you provide a stable Accordion `id`.
-- Closed panels remain mounted to keep hydration predictable.
+- Closed panel containers stay in the DOM for stable `aria-controls` relationships, while panel content is unmounted by default unless `keepMounted` or `hiddenUntilFound` is enabled.
 - `hiddenUntilFound` is corrected after hydration because React DOM serializes the initial `hidden` attribute as a boolean during SSR.
 
 ## Storybook
@@ -74,7 +76,7 @@ npm run storybook:react
 
 Published Chromatic Storybook:
 
-- [https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/)
+- [https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/)
 
 ## Testing And Development Notes
 

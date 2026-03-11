@@ -1,7 +1,7 @@
 {
   "name": "@accretion-ui/angular",
-  "version": "0.1.0",
-  "description": "Native Angular Accordion directives and utilities derived from the shared Accretion UI source.",
+  "version": "0.2.1",
+  "description": "Native Angular Accordion primitives derived from the shared Accretion UI source.",
   "sideEffects": [
     "./styles.css"
   ],

@@ -12,6 +12,7 @@ test('React Storybook docs and default story load successfully', async ({ page }
   expect(await docsFrame.locator('table').count()).toBeGreaterThanOrEqual(2);
   await expect(docsFrame.getByRole('columnheader', { name: 'Prop / event' })).toBeVisible();
   await expect(docsFrame.getByRole('columnheader', { name: 'CSS variable' })).toBeVisible();
+  await expect(docsFrame.getByText('keepMounted').first()).toBeVisible();
 
   await page.goto('/?path=/story/react-accordion--default');
 
@@ -22,6 +23,7 @@ test('React Storybook docs and default story load successfully', async ({ page }
   const deliveryTrigger = frame.getByRole('button', { name: 'Delivery timeline' });
   const handoffTrigger = frame.getByRole('button', { name: 'Engineering handoff' });
   const deliveryPanel = frame.locator('#storybook-react-default-timeline-panel');
+  const handoffPanel = frame.locator('#storybook-react-default-handoff-panel');
 
   await expect(deliveryTrigger).toHaveAttribute('aria-expanded', 'true');
   await expect(root).toHaveAttribute('data-state', 'open');
@@ -32,6 +34,9 @@ test('React Storybook docs and default story load successfully', async ({ page }
   await expect(deliveryTrigger).toHaveCSS('border-top-left-radius', '7px');
   await expect(deliveryPanel).toHaveCSS('padding-top', '16px');
   await expect(deliveryPanel).toHaveCSS('padding-bottom', '16px');
+  expect(
+    await handoffPanel.evaluate((node) => node.textContent?.trim() ?? ''),
+  ).toBe('');
 
   await deliveryTrigger.focus();
   const firstTriggerFocus = await deliveryTrigger.evaluate((node) => ({
@@ -50,12 +55,22 @@ test('React Storybook docs and default story load successfully', async ({ page }
   await deliveryTrigger.click();
   await expect(deliveryTrigger).toHaveAttribute('aria-expanded', 'false');
   await expect(root).toHaveAttribute('data-state', 'closed');
-  await expect(root).toHaveCSS('border-top-color', 'rgb(7, 166, 200)');
+  await expect(root).toHaveCSS('border-top-color', 'rgb(189, 204, 228)');
   expect(
     await deliveryTrigger.evaluate(
       (node) => node.ownerDocument.activeElement === node,
     ),
   ).toBe(true);
+  const clickedClosedFocus = await deliveryTrigger.evaluate((node) => ({
+    outlineColor: getComputedStyle(node).outlineColor,
+    outlineOffset: getComputedStyle(node).outlineOffset,
+    outlineWidth: getComputedStyle(node).outlineWidth,
+  }));
+  expect(clickedClosedFocus).toEqual({
+    outlineColor: 'rgb(7, 166, 200)',
+    outlineOffset: '-5px',
+    outlineWidth: '2px',
+  });
 
   await deliveryTrigger.evaluate((node) => node.blur());
   await expect(root).toHaveCSS('border-top-color', 'rgb(189, 204, 228)');
@@ -67,6 +82,9 @@ test('React Storybook docs and default story load successfully', async ({ page }
   await handoffTrigger.click();
   await expect(deliveryTrigger).toHaveAttribute('aria-expanded', 'false');
   await expect(handoffTrigger).toHaveAttribute('aria-expanded', 'true');
+  await expect(handoffPanel).toContainText(
+    'The handoff checklist can stay collapsed until a delivery owner needs it.',
+  );
   const clickedOpenFocus = await handoffTrigger.evaluate((node) => ({
     outlineColor: getComputedStyle(node).outlineColor,
     outlineOffset: getComputedStyle(node).outlineOffset,

@@ -32,8 +32,8 @@ Use these checks first:
 
 Published Storybooks:
 
-- React Chromatic Storybook: [https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/)
-- Angular Chromatic Storybook: [https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/](https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/)
+- React Chromatic Storybook: [https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/)
+- Angular Chromatic Storybook: [https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/](https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/)
 
 ## Architecture Overview
 
@@ -41,7 +41,7 @@ The repo uses a layered approach:
 
 - `packages/core` contains shared Accordion logic, types, token-driven CSS generation, and the Mitosis-authored low-level view parts.
 - `packages/react` publishes the React package. It uses generated React view parts from Mitosis plus a thin React-native compound API for state, context, ids, and keyboard behavior.
-- `packages/angular` publishes the Angular package. It uses native standalone directives attached directly to real DOM elements so Angular consumers keep a one-element-per-part API without wrapper nodes.
+- `packages/angular` publishes the Angular package. It uses native standalone host-bound primitives attached directly to real DOM elements so Angular consumers keep a one-element-per-part API without wrapper nodes.
 - `chromatic/react` and `chromatic/angular` hold the Storybook surfaces used locally and in Chromatic.
 - `smoke-apps/react-next` and `smoke-apps/angular-ssr` validate SSR and hydration in real framework runtimes.
 - `testing` contains Vitest and Playwright coverage across logic, React behavior, SSR smoke apps, and Storybook availability.
@@ -143,7 +143,7 @@ npm run storybook:react
 ```
 
 Default URL: [http://127.0.0.1:6006](http://127.0.0.1:6006)
-Published Chromatic URL: [https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-fjwmuxymja.chromatic.com/)
+Published Chromatic URL: [https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/)
 
 ## Run Storybook For Angular
 
@@ -152,7 +152,7 @@ npm run storybook:angular
 ```
 
 Default URL: [http://127.0.0.1:6007](http://127.0.0.1:6007)
-Published Chromatic URL: [https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/](https://69ae3de6fef62640081354ec-rstgwtrisq.chromatic.com/)
+Published Chromatic URL: [https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/](https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/)
 
 ## Run Chromatic For React
 
@@ -242,6 +242,6 @@ React is publishable directly from its package folder because the build writes i
 ## Known Limitations And Tradeoffs
 
 - The Angular public package uses native directives instead of directly shipping the generated Mitosis Angular output. This keeps the compound API and one-element-per-part contract stable.
-- Closed panels remain mounted in both targets. This keeps SSR output and hydration behavior predictable, but it differs from libraries that unmount closed content by default.
+- Closed panel containers stay mounted in both targets so `aria-controls` targets remain stable, but panel content is unmounted by default unless `keepMounted` or `hiddenUntilFound` is enabled.
 - React exposes `hiddenUntilFound`, but React DOM normalizes `hidden` values during SSR. The package corrects the attribute after hydration so browser find-in-page can still work, but the initial HTML is still serialized as standard `hidden`.
 - The current repo is intentionally scoped to Accordion only. The structure is designed for expansion, but no placeholder components were added.

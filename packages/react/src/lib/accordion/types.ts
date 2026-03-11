@@ -38,4 +38,5 @@ export interface AccordionTriggerProps
 export interface AccordionPanelProps
   extends React.HTMLAttributes<HTMLDivElement> {
   hiddenUntilFound?: boolean;
+  keepMounted?: boolean;
 }

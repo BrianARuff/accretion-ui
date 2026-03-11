@@ -1,10 +1,10 @@
 {
   "name": "@accretion-ui/angular-smoke",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "type": "module",
   "dependencies": {
-    "@accretion-ui/angular": "0.1.0",
+    "@accretion-ui/angular": "0.2.1",
     "express": "5.2.1"
   },
   "devDependencies": {

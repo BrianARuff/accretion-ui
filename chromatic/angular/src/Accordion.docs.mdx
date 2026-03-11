@@ -6,7 +6,7 @@ import * as AccordionStories from './Accordion.stories';
 <Title>Angular Accordion</Title>
 <Subtitle>Accessible disclosure content applied directly to native Angular host elements.</Subtitle>
 
-The Angular package exposes standalone directives instead of wrapper components so each Accordion part can attach to a real native element. That keeps attributes, semantics, and SSR output predictable without adding extra host nodes around the actual trigger or panel elements.
+The Angular package exposes standalone host-bound primitives instead of wrapper components so each Accordion part can attach to a real native element. That keeps attributes, semantics, and SSR output predictable without adding extra host nodes around the actual trigger or panel elements.
 
 ## Purpose
 
@@ -40,13 +40,33 @@ Use Accordion when a page needs progressive disclosure without forcing people to
     </tr>
     <tr>
       <td><code>acAccordion</code></td>
-      <td><code>multiple</code>, <code>collapsible</code></td>
-      <td>Switches between single and multiple expansion behavior and controls whether the last open item can collapse.</td>
+      <td><code>multiple</code></td>
+      <td>Allows more than one item to stay open at the same time.</td>
     </tr>
     <tr>
       <td><code>acAccordion</code></td>
-      <td><code>disabled</code>, <code>loopFocus</code>, <code>hiddenUntilFound</code>, <code>size</code></td>
-      <td>Disables the full control, keeps keyboard navigation looping, enables find-in-page reveal behavior, and selects density.</td>
+      <td><code>collapsible</code></td>
+      <td>Allows the last open item to collapse in single mode.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>disabled</code></td>
+      <td>Disables the full control and prevents interaction for every item.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>loopFocus</code></td>
+      <td>Keeps roving keyboard navigation looping from the last trigger back to the first and vice versa.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>hiddenUntilFound</code></td>
+      <td>Lets browser find-in-page reveal closed panels when supported by the platform.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordion</code></td>
+      <td><code>size</code></td>
+      <td>Selects the density tokens that drive spacing, padding, and trigger height.</td>
     </tr>
     <tr>
       <td><code>acAccordionItem</code></td>
@@ -55,8 +75,13 @@ Use Accordion when a page needs progressive disclosure without forcing people to
     </tr>
     <tr>
       <td><code>acAccordionItem</code></td>
-      <td><code>disabled</code>, <code>openChange</code></td>
-      <td>Disables a single item or emits when that item opens or closes.</td>
+      <td><code>disabled</code></td>
+      <td>Disables a single item without affecting the rest of the Accordion.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordionItem</code></td>
+      <td><code>openChange</code></td>
+      <td>Emits when that item opens or closes.</td>
     </tr>
     <tr>
       <td><code>acAccordionHeader</code></td>
@@ -70,8 +95,18 @@ Use Accordion when a page needs progressive disclosure without forcing people to
     </tr>
     <tr>
       <td><code>acAccordionPanel</code></td>
-      <td><code>hiddenUntilFound</code> plus native <code>div</code> attributes</td>
-      <td>Keeps panel markup native and allows closed content to participate in browser find-in-page behavior.</td>
+      <td><code>hiddenUntilFound</code></td>
+      <td>Lets closed content participate in browser find-in-page behavior when requested.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordionPanel</code></td>
+      <td><code>keepMounted</code></td>
+      <td>Keeps closed panel content mounted instead of unmounting it when the item collapses.</td>
+    </tr>
+    <tr>
+      <td><code>acAccordionPanel</code></td>
+      <td>Native <code>div</code> attributes</td>
+      <td>Keeps panel markup native while preserving the Accordion ARIA relationship.</td>
     </tr>
   </tbody>
 </table>
@@ -81,6 +116,7 @@ Use Accordion when a page needs progressive disclosure without forcing people to
 - Apply `acAccordionTrigger` to a real `button` whenever possible.
 - Use `value` and `valueChange` when the surrounding component needs programmatic control.
 - Keep each `acAccordionItem` `value` stable so SSR IDs remain deterministic.
+- Leave `keepMounted` at its default `false` unless hidden content must stay searchable, measurable, or available for animation orchestration.
 - Prefer one Accordion per information cluster rather than nesting multiple levels.
 
 ## Accessibility Guidance
@@ -88,6 +124,7 @@ Use Accordion when a page needs progressive disclosure without forcing people to
 - Triggers support `ArrowUp`, `ArrowDown`, `Home`, and `End` keyboard navigation.
 - Panels link back to their trigger with `aria-labelledby`.
 - Disabled items expose disabled state without relying on color alone.
+- Pointer and keyboard activation keep focus on the trigger that changed state so the visible focus indicator stays anchored to the active control.
 - Trigger text should remain meaningful when read out of context by assistive technologies.
 
 ## Styling Hooks
@@ -132,7 +169,7 @@ Import `@accretion-ui/angular/styles.css` in consuming applications or include t
     </tr>
     <tr>
       <td><code>--ac-accordion-focus-ring-color</code></td>
-      <td>Defines the keyboard focus-visible outline color used on triggers.</td>
+      <td>Defines the focus outline color used on triggers after pointer or keyboard activation.</td>
     </tr>
     <tr>
       <td><code>--ac-accordion-focus-ring-offset</code></td>

@@ -1,6 +1,6 @@
 {
   "name": "@accretion-ui/react",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Native React Accordion components generated from the shared Accretion UI source.",
   "type": "module",
   "sideEffects": [
@@ -22,7 +22,7 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts --external react --external react-dom --clean && cp src/styles.css dist/styles.css && cp README.md dist/README.md"
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react --external react-dom --clean --minify && cp src/styles.css dist/styles.css && cp README.md dist/README.md"
   },
   "peerDependencies": {
     "react": "^19.0.0",

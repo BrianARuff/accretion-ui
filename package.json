@@ -1,6 +1,6 @@
 {
   "name": "accretion-ui-mitosis",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "private": true,
   "description": "Single-source Accordion component library authored with Mitosis and published for React and Angular.",
   "packageManager": "npm@11.10.1",

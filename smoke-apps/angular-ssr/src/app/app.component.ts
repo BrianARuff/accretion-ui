@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 import {
-  AccordionHeaderDirective,
-  AccordionItemDirective,
-  AccordionPanelDirective,
-  AccordionRootDirective,
-  AccordionTriggerDirective,
+  Accordion,
+  AccordionHeader,
+  AccordionItem,
+  AccordionPanel,
+  AccordionTrigger,
 } from '@accretion-ui/angular';
 
 @Component({
   imports: [
-    AccordionRootDirective,
-    AccordionItemDirective,
-    AccordionHeaderDirective,
-    AccordionTriggerDirective,
-    AccordionPanelDirective,
+    Accordion,
+    AccordionItem,
+    AccordionHeader,
+    AccordionTrigger,
+    AccordionPanel,
   ],
   selector: 'app-root',
   standalone: true,

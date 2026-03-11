@@ -261,10 +261,6 @@ ${renderVariables(sizeVariables.comfortable)}
   border-color: var(--ac-accordion-root-border-color-open);
 }
 
-:where(.ac-accordion:focus-within) {
-  border-color: var(--ac-accordion-root-border-color-open);
-}
-
 :where(.ac-accordion[data-size='compact']) {
 ${renderVariables(sizeVariables.compact)}
 }
@@ -380,8 +376,7 @@ ${renderVariables(sizeVariables.spacious)}
   transform: translateY(2px) rotate(-135deg);
 }
 
-:where(.ac-accordion__trigger:focus-visible),
-:where(.ac-accordion__trigger[data-state='open']:focus) {
+:where(.ac-accordion__trigger:focus) {
   outline: var(--ac-accordion-focus-ring-width) solid var(--ac-accordion-focus-ring-color);
   outline-offset: calc(
     -1 * (

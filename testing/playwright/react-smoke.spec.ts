@@ -23,16 +23,25 @@ test.describe('React SSR smoke app', () => {
     await expect(timingTrigger).toHaveAttribute('aria-expanded', 'true');
     await expect(billingTrigger).toHaveAttribute('aria-expanded', 'false');
     await expect(singleCard.getByTestId('react-single-panel-timing')).toBeVisible();
+    await expect(
+      singleCard.getByText('Controlled state changes flow through the package API.'),
+    ).toHaveCount(0);
 
     await billingTrigger.click();
 
     await expect(timingTrigger).toHaveAttribute('aria-expanded', 'false');
     await expect(billingTrigger).toHaveAttribute('aria-expanded', 'true');
     await expect(singleCard.getByTestId('react-single-panel-billing')).toBeVisible();
+    await expect(
+      singleCard.getByText('Controlled state changes flow through the package API.'),
+    ).toHaveCount(1);
     await expect(disabledTrigger).toBeDisabled();
 
     await singleCard.getByRole('button', { name: 'Close all' }).click();
     await expect(billingTrigger).toHaveAttribute('aria-expanded', 'false');
+    await expect(
+      singleCard.getByText('Controlled state changes flow through the package API.'),
+    ).toHaveCount(0);
 
     expect(
       consoleErrors.filter((message) => /hydration|did not match/i.test(message)),

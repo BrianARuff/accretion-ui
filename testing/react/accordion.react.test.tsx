@@ -38,6 +38,38 @@ describe('React Accordion', () => {
       screen.getByRole('button', { name: 'Billing handoff' }),
     ).toHaveAttribute('aria-expanded', 'false');
     expect(screen.getByTestId('billing-panel')).toHaveAttribute('hidden', '');
+    expect(screen.queryByText('Billing panel')).toBeNull();
+  });
+
+  it('does not mount closed panel content by default and keeps it mounted when keepMounted is true', () => {
+    render(
+      <Accordion id="react-unit-keep-mounted">
+        <AccordionItem value="delivery">
+          <AccordionHeader>
+            <AccordionTrigger>Delivery timeline</AccordionTrigger>
+          </AccordionHeader>
+          <AccordionPanel data-testid="delivery-panel">Delivery panel</AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem value="billing">
+          <AccordionHeader>
+            <AccordionTrigger>Billing handoff</AccordionTrigger>
+          </AccordionHeader>
+          <AccordionPanel data-testid="billing-panel" keepMounted>
+            Billing panel
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>,
+    );
+
+    expect(screen.getByTestId('delivery-panel')).toHaveAttribute('hidden', '');
+    expect(screen.queryByText('Delivery panel')).toBeNull();
+    expect(screen.getByTestId('billing-panel')).toHaveAttribute('hidden', '');
+    expect(screen.getByText('Billing panel')).toBeInTheDocument();
+
+    fireEvent.click(screen.getByRole('button', { name: 'Delivery timeline' }));
+
+    expect(screen.getByText('Delivery panel')).toBeInTheDocument();
   });
 
   it('supports controlled state, inherited hiddenUntilFound, and item open change callbacks', () => {
@@ -371,7 +403,9 @@ describe('React Accordion', () => {
       'hidden',
       'until-found',
     );
+    expect(screen.getByText('Delivery panel')).toBeInTheDocument();
     expect(screen.getByTestId('billing-panel')).toHaveAttribute('hidden', '');
+    expect(screen.queryByText('Billing panel')).toBeNull();
   });
 
   it('prevents a trigger-level disabled prop from toggling', () => {

@@ -13,6 +13,7 @@ export function AccordionPanel({
   children,
   className,
   hiddenUntilFound,
+  keepMounted = false,
   ...rest
 }: AccordionPanelProps) {
   const accordion = useAccordionRootContext();
@@ -20,6 +21,8 @@ export function AccordionPanel({
   const panelRef = React.useRef<HTMLDivElement | null>(null);
   const finalHiddenUntilFound =
     hiddenUntilFound ?? accordion.hiddenUntilFound;
+  const shouldRenderChildren =
+    item.open || keepMounted || finalHiddenUntilFound;
 
   React.useEffect(() => {
     const panelElement = panelRef.current;
@@ -62,7 +65,7 @@ export function AccordionPanel({
         role: rest.role ?? 'region',
       }}
     >
-      {children}
+      {shouldRenderChildren ? children : null}
     </AccordionPanelView>
   );
 }

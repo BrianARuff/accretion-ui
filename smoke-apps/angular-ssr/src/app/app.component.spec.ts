@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { describe, expect, it } from 'vitest';
 import {
-  AccordionHeaderDirective,
-  AccordionItemDirective,
-  AccordionPanelDirective,
-  AccordionRootDirective,
-  AccordionTriggerDirective,
+  Accordion,
+  AccordionHeader,
+  AccordionItem,
+  AccordionPanel,
+  AccordionTrigger,
 } from '@accretion-ui/angular';
 
 const cssEscape = (value: string): string =>
@@ -26,11 +26,11 @@ if (!globalThis.CSS) {
 
 @Component({
   imports: [
-    AccordionRootDirective,
-    AccordionItemDirective,
-    AccordionHeaderDirective,
-    AccordionTriggerDirective,
-    AccordionPanelDirective,
+    Accordion,
+    AccordionItem,
+    AccordionHeader,
+    AccordionTrigger,
+    AccordionPanel,
   ],
   standalone: true,
   template: `
@@ -55,7 +55,13 @@ if (!globalThis.CSS) {
             Alpha
           </button>
         </h3>
-        <div acAccordionPanel data-testid="alpha-panel">Alpha panel</div>
+        <div
+          acAccordionPanel
+          [keepMounted]="alphaKeepMounted"
+          data-testid="alpha-panel"
+        >
+          Alpha panel
+        </div>
       </div>
 
       <div acAccordionItem value="beta">
@@ -67,6 +73,7 @@ if (!globalThis.CSS) {
         <div
           acAccordionPanel
           [hiddenUntilFound]="betaHiddenUntilFound"
+          [keepMounted]="betaKeepMounted"
           data-testid="beta-panel"
         >
           Beta panel
@@ -90,7 +97,9 @@ if (!globalThis.CSS) {
 })
 class AccordionTestHostComponent {
   alphaChanges: boolean[] = [];
+  alphaKeepMounted = false;
   betaHiddenUntilFound?: boolean;
+  betaKeepMounted = false;
   collapsible = true;
   controlled = false;
   controlledValue: string | string[] | null = 'alpha';
@@ -144,6 +153,38 @@ describe('Angular Accordion directives', () => {
     expect(alphaPanel.hasAttribute('hidden')).toBe(false);
     expect(betaTrigger.getAttribute('aria-expanded')).toBe('false');
     expect(betaPanel.getAttribute('hidden')).toBe('');
+    expect(alphaPanel.textContent?.trim()).toBe('Alpha panel');
+    expect(betaPanel.textContent?.trim()).toBe('');
+  });
+
+  it('does not mount closed panel content by default and keeps it mounted when keepMounted is true', async () => {
+    const fixture = await setup();
+    const component = fixture.componentInstance;
+    component.controlled = true;
+    component.controlledValue = null;
+    component.betaKeepMounted = true;
+    fixture.detectChanges();
+
+    const host = fixture.nativeElement as HTMLElement;
+    const alphaPanel = host.querySelector(
+      '[data-testid="alpha-panel"]',
+    ) as HTMLDivElement;
+    const betaPanel = host.querySelector(
+      '[data-testid="beta-panel"]',
+    ) as HTMLDivElement;
+
+    expect(alphaPanel.getAttribute('hidden')).toBe('');
+    expect(alphaPanel.textContent?.trim()).toBe('');
+    expect(betaPanel.getAttribute('hidden')).toBe('');
+    expect(betaPanel.textContent?.trim()).toBe('Beta panel');
+
+    const alphaTrigger = host.querySelector(
+      '[data-testid="alpha-trigger"]',
+    ) as HTMLButtonElement;
+    alphaTrigger.click();
+    fixture.detectChanges();
+
+    expect(alphaPanel.textContent?.trim()).toBe('Alpha panel');
   });
 
   it('supports controlled value changes, inherited hiddenUntilFound, and item openChange output', async () => {
@@ -168,6 +209,7 @@ describe('Angular Accordion directives', () => {
     expect(component.valueChanges.at(-1)).toBe('beta');
     expect(component.alphaChanges).toEqual([false]);
     expect(alphaPanel.getAttribute('hidden')).toBe('until-found');
+    expect(alphaPanel.textContent?.trim()).toBe('Alpha panel');
 
     component.controlledValue = 'alpha';
     fixture.detectChanges();
@@ -334,5 +376,7 @@ describe('Angular Accordion directives', () => {
 
     expect(alphaPanel.getAttribute('hidden')).toBe('until-found');
     expect(betaPanel.getAttribute('hidden')).toBe('');
+    expect(alphaPanel.textContent?.trim()).toBe('Alpha panel');
+    expect(betaPanel.textContent?.trim()).toBe('');
   });
 });
