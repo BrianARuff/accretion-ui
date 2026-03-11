@@ -94,6 +94,11 @@ Use Accordion when a page needs progressive disclosure without forcing people to
       <td>Supports normal Angular host attributes while keeping the Accordion ARIA wiring in place.</td>
     </tr>
     <tr>
+      <td><code>acAccordionTrigger</code></td>
+      <td><code>showIndicator</code></td>
+      <td>Hides the default trailing chevron when set to <code>false</code> so the trigger content can be fully custom.</td>
+    </tr>
+    <tr>
       <td><code>acAccordionPanel</code></td>
       <td><code>hiddenUntilFound</code></td>
       <td>Lets closed content participate in browser find-in-page behavior when requested.</td>
@@ -116,6 +121,7 @@ Use Accordion when a page needs progressive disclosure without forcing people to
 - Apply `acAccordionTrigger` to a real `button` whenever possible.
 - Use `value` and `valueChange` when the surrounding component needs programmatic control.
 - Keep each `acAccordionItem` `value` stable so SSR IDs remain deterministic.
+- Set `[showIndicator]="false"` when the trailing chevron should be replaced by fully custom trigger content.
 - Leave `keepMounted` at its default `false` unless hidden content must stay searchable, measurable, or available for animation orchestration.
 - Prefer one Accordion per information cluster rather than nesting multiple levels.
 

@@ -17,19 +17,43 @@ test.describe('React SSR smoke app', () => {
 
     const singleCard = page.getByTestId('react-single-card');
     const timingTrigger = singleCard.getByTestId('react-single-trigger-timing');
+    const timingIconTrigger = singleCard.getByTestId(
+      'react-single-trigger-timing-icon',
+    );
     const billingTrigger = singleCard.getByTestId('react-single-trigger-billing');
+    const billingTriggerMeta = singleCard.getByTestId(
+      'react-single-trigger-billing-meta',
+    );
     const disabledTrigger = singleCard.getByTestId('react-single-trigger-disabled');
 
     await expect(timingTrigger).toHaveAttribute('aria-expanded', 'true');
+    await expect(timingIconTrigger).toHaveAttribute('aria-expanded', 'true');
     await expect(billingTrigger).toHaveAttribute('aria-expanded', 'false');
+    await expect(billingTrigger).toHaveAttribute('data-indicator', 'hidden');
+    await expect(billingTriggerMeta).toHaveText('Custom');
     await expect(singleCard.getByTestId('react-single-panel-timing')).toBeVisible();
     await expect(
       singleCard.getByText('Controlled state changes flow through the package API.'),
     ).toHaveCount(0);
 
+    await timingIconTrigger.click();
+
+    await expect(timingTrigger).toHaveAttribute('aria-expanded', 'false');
+    await expect(timingIconTrigger).toHaveAttribute('aria-expanded', 'false');
+    await expect(timingIconTrigger).toBeFocused();
+
+    await timingTrigger.click();
+    await expect(timingTrigger).toHaveAttribute('aria-expanded', 'true');
+    await expect(timingIconTrigger).toHaveAttribute('aria-expanded', 'true');
+
+    await timingIconTrigger.focus();
+    await page.keyboard.press('ArrowDown');
+    await expect(billingTrigger).toBeFocused();
+
     await billingTrigger.click();
 
     await expect(timingTrigger).toHaveAttribute('aria-expanded', 'false');
+    await expect(timingIconTrigger).toHaveAttribute('aria-expanded', 'false');
     await expect(billingTrigger).toHaveAttribute('aria-expanded', 'true');
     await expect(singleCard.getByTestId('react-single-panel-billing')).toBeVisible();
     await expect(

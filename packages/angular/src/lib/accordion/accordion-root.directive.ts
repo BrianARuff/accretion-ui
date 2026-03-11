@@ -133,10 +133,26 @@ export class AccordionRootDirective {
       }))
       .filter((item) => item.value.length > 0);
 
+    const dedupedDescriptors = new Map<string, AccordionItemDescriptor>();
+
+    for (const descriptor of triggerDescriptors) {
+      const existingDescriptor = dedupedDescriptors.get(descriptor.value);
+
+      if (!existingDescriptor) {
+        dedupedDescriptors.set(descriptor.value, descriptor);
+        continue;
+      }
+
+      dedupedDescriptors.set(descriptor.value, {
+        ...existingDescriptor,
+        disabled: Boolean(existingDescriptor.disabled && descriptor.disabled),
+      });
+    }
+
     const nextValue = getNextAccordionItemValue({
       currentValue,
       direction,
-      items: triggerDescriptors,
+      items: Array.from(dedupedDescriptors.values()),
       loop: this.loopFocus,
     });
 

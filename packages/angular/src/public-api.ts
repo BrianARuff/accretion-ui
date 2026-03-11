@@ -18,3 +18,14 @@ export {
   AccordionTriggerDirective,
   AccordionTriggerDirective as AccordionTrigger,
 } from './lib/accordion/accordion-trigger.directive';
+export type {
+  AccordionHiddenAttribute,
+  AccordionIds,
+  AccordionItemDescriptor,
+  AccordionNavigationDirection,
+  AccordionOrientation,
+  AccordionSize,
+  AccordionState,
+  AccordionValueInput,
+  AccordionValueOutput,
+} from './lib/accordion/types';

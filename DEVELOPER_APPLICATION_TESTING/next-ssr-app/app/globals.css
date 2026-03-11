@@ -1,0 +1,163 @@
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(122, 218, 248, 0.2), transparent 28rem),
+    linear-gradient(180deg, #f6f9fd 0%, #eef3f9 100%);
+  color: #182230;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+button,
+code {
+  font-family: inherit;
+}
+
+.review-shell {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.hero {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 48rem;
+}
+
+.eyebrow,
+.card-kicker {
+  color: #0d6e86;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.card-header h2 {
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.hero h1 {
+  font-size: clamp(2.35rem, 4vw, 3.8rem);
+}
+
+.intro {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.review-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.review-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(24, 34, 48, 0.1);
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 44px rgba(24, 34, 48, 0.08);
+  padding: 1.5rem;
+}
+
+.card-header {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-header h2 {
+  font-size: 1.5rem;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.control-row button {
+  background: #182230;
+  border: 0;
+  border-radius: 999px;
+  color: #f7fbff;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.625rem 0.95rem;
+}
+
+.split-trigger-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+}
+
+.split-trigger-row > .ac-accordion__trigger {
+  width: auto;
+}
+
+.split-trigger {
+  min-width: 0;
+}
+
+.split-trigger--label {
+  justify-content: flex-start;
+}
+
+.split-trigger--icon {
+  justify-content: center;
+  min-width: 3.5rem;
+  padding-inline: 1rem;
+}
+
+.split-trigger__icon,
+.trigger-meta {
+  font-weight: 700;
+}
+
+.split-trigger__icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.trigger-meta {
+  margin-inline-start: auto;
+  opacity: 0.72;
+}
+
+@media (max-width: 720px) {
+  .review-shell {
+    padding-inline: 1rem;
+  }
+
+  .review-card {
+    padding: 1.15rem;
+  }
+
+  .split-trigger-row {
+    grid-template-columns: 1fr;
+  }
+
+  .split-trigger--icon {
+    justify-content: flex-start;
+  }
+}

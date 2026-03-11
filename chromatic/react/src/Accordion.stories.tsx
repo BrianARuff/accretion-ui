@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  type AccordionValueOutput,
 } from '../../../packages/react/src';
 
 const meta = {
@@ -54,6 +55,8 @@ export const Default: Story = {
 export const ControlledSingle: Story = {
   render: () => {
     const [value, setValue] = useState<string | null>('billing');
+    const normalizeSingleValue = (nextValue: AccordionValueOutput) =>
+      Array.isArray(nextValue) ? nextValue[0] ?? null : nextValue;
 
     return (
       <div style={{ display: 'grid', gap: '1rem' }}>
@@ -69,9 +72,7 @@ export const ControlledSingle: Story = {
         <Accordion
           collapsible
           id="storybook-react-controlled"
-          onValueChange={(nextValue) =>
-            setValue(Array.isArray(nextValue) ? nextValue[0] ?? null : nextValue)
-          }
+          onValueChange={(nextValue) => setValue(normalizeSingleValue(nextValue))}
           value={value}
         >
           <AccordionItem value="billing">
@@ -141,6 +142,33 @@ export const DisabledItem: Story = {
         </AccordionHeader>
         <AccordionPanel>
           Disabled items should not toggle or receive action styling.
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
+  ),
+};
+
+export const CustomTriggerContent: Story = {
+  render: () => (
+    <Accordion defaultValue="release" id="storybook-react-custom-trigger">
+      <AccordionItem value="release">
+        <AccordionHeader>
+          <AccordionTrigger
+            data-testid="storybook-react-custom-trigger-button"
+            showIndicator={false}
+          >
+            <span>Release plan</span>
+            <span
+              aria-hidden="true"
+              data-testid="storybook-react-custom-trigger-meta"
+            >
+              Custom
+            </span>
+          </AccordionTrigger>
+        </AccordionHeader>
+        <AccordionPanel>
+          Trigger content can include multiple child elements while the default
+          indicator stays hidden.
         </AccordionPanel>
       </AccordionItem>
     </Accordion>

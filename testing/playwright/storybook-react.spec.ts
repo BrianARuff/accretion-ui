@@ -13,6 +13,7 @@ test('React Storybook docs and default story load successfully', async ({ page }
   await expect(docsFrame.getByRole('columnheader', { name: 'Prop / event' })).toBeVisible();
   await expect(docsFrame.getByRole('columnheader', { name: 'CSS variable' })).toBeVisible();
   await expect(docsFrame.getByText('keepMounted').first()).toBeVisible();
+  await expect(docsFrame.getByText('showIndicator').first()).toBeVisible();
 
   await page.goto('/?path=/story/react-accordion--default');
 
@@ -128,4 +129,17 @@ test('React Storybook docs and default story load successfully', async ({ page }
     outlineOffset: '-5px',
     outlineWidth: '2px',
   });
+
+  await page.goto('/?path=/story/react-accordion--custom-trigger-content');
+
+  const customFrame = page.frameLocator('#storybook-preview-iframe');
+  const customTrigger = customFrame.getByTestId(
+    'storybook-react-custom-trigger-button',
+  );
+
+  await expect(customTrigger).toHaveAttribute('data-indicator', 'hidden');
+  await expect(customTrigger).toContainText('Release plan');
+  await expect(
+    customFrame.getByTestId('storybook-react-custom-trigger-meta'),
+  ).toHaveText('Custom');
 });

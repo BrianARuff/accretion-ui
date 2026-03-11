@@ -1,5 +1,12 @@
 # Accretion UI Mitosis Accordion Library
 
+## Quick Links
+
+- React Chromatic Storybook: [https://69ae3d6f019c2b8f497fdd28-zwrtooohxn.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-zwrtooohxn.chromatic.com/)
+- Angular Chromatic Storybook: [https://69ae3de6fef62640081354ec-fbslbprsoe.chromatic.com/](https://69ae3de6fef62640081354ec-fbslbprsoe.chromatic.com/)
+- React package on npm: [https://www.npmjs.com/package/@accretion-ui/react](https://www.npmjs.com/package/@accretion-ui/react)
+- Angular package on npm: [https://www.npmjs.com/package/@accretion-ui/angular](https://www.npmjs.com/package/@accretion-ui/angular)
+
 ## What this library is
 
 This repository is a production-oriented starting point for a shared component library that is authored once and shipped as native packages for React and Angular. It currently ships one component, `Accordion`, because the goal is to validate the architecture, accessibility quality, SSR behavior, testing workflow, and documentation standard before scaling the library wider.
@@ -32,8 +39,8 @@ Use these checks first:
 
 Published Storybooks:
 
-- React Chromatic Storybook: [https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/)
-- Angular Chromatic Storybook: [https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/](https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/)
+- React Chromatic Storybook: [https://69ae3d6f019c2b8f497fdd28-zwrtooohxn.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-zwrtooohxn.chromatic.com/)
+- Angular Chromatic Storybook: [https://69ae3de6fef62640081354ec-fbslbprsoe.chromatic.com/](https://69ae3de6fef62640081354ec-fbslbprsoe.chromatic.com/)
 
 ## Architecture Overview
 
@@ -143,7 +150,7 @@ npm run storybook:react
 ```
 
 Default URL: [http://127.0.0.1:6006](http://127.0.0.1:6006)
-Published Chromatic URL: [https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/)
+Published Chromatic URL: [https://69ae3d6f019c2b8f497fdd28-zwrtooohxn.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-zwrtooohxn.chromatic.com/)
 
 ## Run Storybook For Angular
 
@@ -152,7 +159,7 @@ npm run storybook:angular
 ```
 
 Default URL: [http://127.0.0.1:6007](http://127.0.0.1:6007)
-Published Chromatic URL: [https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/](https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/)
+Published Chromatic URL: [https://69ae3de6fef62640081354ec-fbslbprsoe.chromatic.com/](https://69ae3de6fef62640081354ec-fbslbprsoe.chromatic.com/)
 
 ## Run Chromatic For React
 
@@ -162,6 +169,11 @@ The script reads `CHROMATIC_PROJECT_TOKEN_REACT_MITOSIS` from the environment.
 npm run chromatic:react
 ```
 
+After publishing, update the React Storybook links in:
+
+- `README.md`
+- `packages/react/README.md`
+
 ## Run Chromatic For Angular
 
 The script reads `CHROMATIC_PROJECT_TOKEN_ANGULAR_MITOSIS` from the environment.
@@ -169,6 +181,11 @@ The script reads `CHROMATIC_PROJECT_TOKEN_ANGULAR_MITOSIS` from the environment.
 ```bash
 npm run chromatic:angular
 ```
+
+After publishing, update the Angular Storybook links in:
+
+- `README.md`
+- `packages/angular/README.md`
 
 ## Run Tests
 
@@ -234,8 +251,11 @@ This repo is set up as a publishable monorepo, but publishing is intentionally e
 1. Update package versions in `packages/react/package.json` and `packages/angular/package.json`.
 2. Run `npm run build`.
 3. Run `npm test`, `npm run smoke`, and `npm run validate:ssr`.
-4. Publish `packages/react` as `@accretion-ui/react`.
-5. Publish `dist/packages/angular` as `@accretion-ui/angular`.
+4. Run `npm run chromatic:react` and `npm run chromatic:angular`.
+5. Update Storybook links in `README.md`, `packages/react/README.md`, and `packages/angular/README.md` to match the newest Chromatic builds.
+6. Dry-run the publish artifacts with `npm pack --dry-run` in `packages/react` and `dist/packages/angular`.
+7. Publish `packages/react` as `@accretion-ui/react`.
+8. Publish `dist/packages/angular` as `@accretion-ui/angular`.
 
 React is publishable directly from its package folder because the build writes into `packages/react/dist`. Angular is published from `dist/packages/angular` because the package is assembled after Angular compilation.
 

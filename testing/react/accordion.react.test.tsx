@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  type AccordionValueOutput,
 } from '@accretion-ui/react';
 
 describe('React Accordion', () => {
@@ -75,6 +76,8 @@ describe('React Accordion', () => {
   it('supports controlled state, inherited hiddenUntilFound, and item open change callbacks', () => {
     const rootChange = vi.fn();
     const itemOpenChange = vi.fn();
+    const normalizeSingleValue = (nextValue: AccordionValueOutput) =>
+      Array.isArray(nextValue) ? nextValue[0] ?? null : nextValue;
 
     function ControlledHarness() {
       const [value, setValue] = React.useState<string | null>('delivery');
@@ -89,12 +92,12 @@ describe('React Accordion', () => {
             collapsible
             hiddenUntilFound
             id="react-unit-controlled"
-            onValueChange={(nextValue) => {
-              rootChange(nextValue);
-              setValue(Array.isArray(nextValue) ? nextValue[0] ?? null : nextValue);
-            }}
-            value={value}
-          >
+          onValueChange={(nextValue) => {
+            rootChange(nextValue);
+            setValue(normalizeSingleValue(nextValue));
+          }}
+          value={value}
+        >
             <AccordionItem onOpenChange={itemOpenChange} value="delivery">
               <AccordionHeader>
                 <AccordionTrigger>Delivery timeline</AccordionTrigger>
@@ -464,5 +467,97 @@ describe('React Accordion', () => {
 
     const trigger = within(item).getByRole('button', { name: 'Trigger label' });
     expect(trigger).toHaveAttribute('type', 'button');
+  });
+
+  it('supports custom trigger content and hides the default indicator when requested', () => {
+    render(
+      <Accordion defaultValue="alpha" id="react-unit-custom-trigger">
+        <AccordionItem value="alpha">
+          <AccordionHeader>
+            <AccordionTrigger data-testid="alpha-trigger" showIndicator={false}>
+              <span>Alpha</span>
+              <span aria-hidden="true" data-testid="alpha-trigger-meta">
+                Custom
+              </span>
+            </AccordionTrigger>
+          </AccordionHeader>
+          <AccordionPanel>Alpha panel</AccordionPanel>
+        </AccordionItem>
+      </Accordion>,
+    );
+
+    const trigger = screen.getByTestId('alpha-trigger');
+
+    expect(trigger).toHaveAttribute('data-indicator', 'hidden');
+    expect(within(trigger).getByText('Alpha')).toBeInTheDocument();
+    expect(within(trigger).getByTestId('alpha-trigger-meta')).toHaveTextContent(
+      'Custom',
+    );
+  });
+
+  it('supports multiple triggers for one item when additional trigger ids are unique', () => {
+    render(
+      <Accordion defaultValue="alpha" id="react-unit-dual-trigger">
+        <AccordionItem value="alpha">
+          <AccordionHeader>
+            <AccordionTrigger data-testid="alpha-trigger">
+              Alpha
+            </AccordionTrigger>
+            <AccordionTrigger
+              aria-label="Toggle Alpha"
+              data-testid="alpha-trigger-icon"
+              id="react-unit-dual-trigger-alpha-trigger-icon"
+              showIndicator={false}
+            >
+              <span aria-hidden="true">+</span>
+            </AccordionTrigger>
+          </AccordionHeader>
+          <AccordionPanel data-testid="alpha-panel">Alpha panel</AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem value="beta">
+          <AccordionHeader>
+            <AccordionTrigger data-testid="beta-trigger">Beta</AccordionTrigger>
+          </AccordionHeader>
+          <AccordionPanel data-testid="beta-panel">Beta panel</AccordionPanel>
+        </AccordionItem>
+      </Accordion>,
+    );
+
+    const alphaTrigger = screen.getByTestId('alpha-trigger');
+    const alphaIconTrigger = screen.getByTestId('alpha-trigger-icon');
+    const betaTrigger = screen.getByTestId('beta-trigger');
+    const alphaPanel = screen.getByTestId('alpha-panel');
+
+    expect(alphaPanel).toHaveAttribute(
+      'aria-labelledby',
+      'react-unit-dual-trigger-alpha-trigger',
+    );
+    expect(alphaTrigger).toHaveAttribute(
+      'aria-controls',
+      'react-unit-dual-trigger-alpha-panel',
+    );
+    expect(alphaIconTrigger).toHaveAttribute(
+      'aria-controls',
+      'react-unit-dual-trigger-alpha-panel',
+    );
+
+    alphaIconTrigger.focus();
+    fireEvent.click(alphaIconTrigger);
+
+    expect(alphaIconTrigger).toHaveAttribute('aria-expanded', 'false');
+    expect(alphaTrigger).toHaveAttribute('aria-expanded', 'false');
+    expect(document.activeElement).toBe(alphaIconTrigger);
+    expect(alphaPanel).toHaveAttribute('hidden', '');
+
+    fireEvent.click(alphaTrigger);
+
+    expect(alphaTrigger).toHaveAttribute('aria-expanded', 'true');
+    expect(alphaIconTrigger).toHaveAttribute('aria-expanded', 'true');
+    expect(alphaPanel).not.toHaveAttribute('hidden');
+
+    alphaIconTrigger.focus();
+    fireEvent.keyDown(alphaIconTrigger, { key: 'ArrowDown' });
+    expect(document.activeElement).toBe(betaTrigger);
   });
 });

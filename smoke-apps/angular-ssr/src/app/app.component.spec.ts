@@ -7,6 +7,7 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  type AccordionValueOutput,
 } from '@accretion-ui/angular';
 
 const cssEscape = (value: string): string =>
@@ -54,6 +55,16 @@ if (!globalThis.CSS) {
           <button acAccordionTrigger data-testid="alpha-trigger" type="button">
             Alpha
           </button>
+          <button
+            acAccordionTrigger
+            aria-label="Toggle Alpha"
+            data-testid="alpha-trigger-icon"
+            id="angular-unit-root-alpha-trigger-icon"
+            [showIndicator]="false"
+            type="button"
+          >
+            <span aria-hidden="true">+</span>
+          </button>
         </h3>
         <div
           acAccordionPanel
@@ -66,8 +77,16 @@ if (!globalThis.CSS) {
 
       <div acAccordionItem value="beta">
         <h3 acAccordionHeader>
-          <button acAccordionTrigger data-testid="beta-trigger" type="button">
-            Beta
+          <button
+            acAccordionTrigger
+            [showIndicator]="betaShowIndicator"
+            data-testid="beta-trigger"
+            type="button"
+          >
+            <span>Beta</span>
+            <span aria-hidden="true" data-testid="beta-trigger-meta">
+              Custom
+            </span>
           </button>
         </h3>
         <div
@@ -100,6 +119,7 @@ class AccordionTestHostComponent {
   alphaKeepMounted = false;
   betaHiddenUntilFound?: boolean;
   betaKeepMounted = false;
+  betaShowIndicator = false;
   collapsible = true;
   controlled = false;
   controlledValue: string | string[] | null = 'alpha';
@@ -112,7 +132,7 @@ class AccordionTestHostComponent {
   size: 'compact' | 'comfortable' | 'spacious' = 'comfortable';
   valueChanges: Array<string | string[] | null> = [];
 
-  handleValueChange(value: string | string[] | null): void {
+  handleValueChange(value: AccordionValueOutput): void {
     this.valueChanges.push(value);
 
     if (this.controlled) {
@@ -319,6 +339,72 @@ describe('Angular Accordion directives', () => {
     fixture.detectChanges();
 
     expect(betaTrigger.getAttribute('aria-expanded')).toBe('false');
+  });
+
+  it('supports custom trigger content and hides the default indicator when requested', async () => {
+    const fixture = await setup();
+    const host = fixture.nativeElement as HTMLElement;
+    const betaTrigger = host.querySelector(
+      '[data-testid="beta-trigger"]',
+    ) as HTMLButtonElement;
+    const betaMeta = host.querySelector(
+      '[data-testid="beta-trigger-meta"]',
+    ) as HTMLSpanElement;
+
+    expect(betaTrigger.getAttribute('data-indicator')).toBe('hidden');
+    expect(betaTrigger.textContent?.replace(/\s+/g, ' ').trim()).toContain('Beta');
+    expect(betaMeta.textContent?.trim()).toBe('Custom');
+  });
+
+  it('supports multiple triggers for the same item when additional trigger ids are unique', async () => {
+    const fixture = await setup();
+    const host = fixture.nativeElement as HTMLElement;
+    const alphaTrigger = host.querySelector(
+      '[data-testid="alpha-trigger"]',
+    ) as HTMLButtonElement;
+    const alphaIconTrigger = host.querySelector(
+      '[data-testid="alpha-trigger-icon"]',
+    ) as HTMLButtonElement;
+    const alphaPanel = host.querySelector(
+      '[data-testid="alpha-panel"]',
+    ) as HTMLDivElement;
+    const betaTrigger = host.querySelector(
+      '[data-testid="beta-trigger"]',
+    ) as HTMLButtonElement;
+
+    expect(alphaPanel.getAttribute('aria-labelledby')).toBe(
+      'angular-unit-root-alpha-trigger',
+    );
+    expect(alphaTrigger.getAttribute('aria-controls')).toBe(
+      'angular-unit-root-alpha-panel',
+    );
+    expect(alphaIconTrigger.getAttribute('aria-controls')).toBe(
+      'angular-unit-root-alpha-panel',
+    );
+
+    alphaIconTrigger.focus();
+    alphaIconTrigger.click();
+    fixture.detectChanges();
+
+    expect(alphaIconTrigger.getAttribute('aria-expanded')).toBe('false');
+    expect(alphaTrigger.getAttribute('aria-expanded')).toBe('false');
+    expect(document.activeElement).toBe(alphaIconTrigger);
+    expect(alphaPanel.getAttribute('hidden')).toBe('');
+
+    alphaTrigger.click();
+    fixture.detectChanges();
+
+    expect(alphaTrigger.getAttribute('aria-expanded')).toBe('true');
+    expect(alphaIconTrigger.getAttribute('aria-expanded')).toBe('true');
+    expect(alphaPanel.getAttribute('hidden')).toBeNull();
+
+    alphaIconTrigger.focus();
+    alphaIconTrigger.dispatchEvent(
+      new KeyboardEvent('keydown', { bubbles: true, key: 'ArrowDown' }),
+    );
+    fixture.detectChanges();
+
+    expect(document.activeElement).toBe(betaTrigger);
   });
 
   it('respects loopFocus keyboard rules', async () => {

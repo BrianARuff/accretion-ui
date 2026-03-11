@@ -94,6 +94,11 @@ Use Accordion when people need to progressively reveal supporting detail without
       <td>Supports framework-native button props while maintaining the Accordion ARIA contract.</td>
     </tr>
     <tr>
+      <td><code>AccordionTrigger</code></td>
+      <td><code>showIndicator</code></td>
+      <td>Hides the default trailing chevron when set to <code>false</code> so the trigger content can be fully custom.</td>
+    </tr>
+    <tr>
       <td><code>AccordionPanel</code></td>
       <td><code>hiddenUntilFound</code></td>
       <td>Keeps closed content discoverable for browser find-in-page when requested.</td>
@@ -116,6 +121,7 @@ Use Accordion when people need to progressively reveal supporting detail without
 - Prefer `button` semantics for the trigger content and keep labels concise enough to scan quickly.
 - Use controlled mode when the surrounding page needs to open sections programmatically.
 - Use `multiple` only when comparing sections side by side is genuinely useful.
+- Set `showIndicator={false}` when the trailing chevron should be replaced by fully custom trigger content.
 - Leave `keepMounted` at its default `false` unless hidden content must stay searchable, measurable, or available for animation orchestration.
 - Provide a stable root `id` when multiple accordions can appear on the same view.
 

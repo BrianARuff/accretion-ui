@@ -25,14 +25,26 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  type AccordionValueOutput,
 } from '@accretion-ui/react';
 
 export function Example() {
+  const handleValueChange = (value: AccordionValueOutput) => {
+    console.log(value);
+  };
+
   return (
-    <Accordion defaultValue="delivery" id="faq-accordion">
+    <Accordion
+      defaultValue="delivery"
+      id="faq-accordion"
+      onValueChange={handleValueChange}
+    >
       <AccordionItem value="delivery">
         <AccordionHeader>
-          <AccordionTrigger>Delivery timeline</AccordionTrigger>
+          <AccordionTrigger showIndicator={false}>
+            <span>Delivery timeline</span>
+            <span aria-hidden="true">Custom</span>
+          </AccordionTrigger>
         </AccordionHeader>
         <AccordionPanel>
           Server-rendered React markup is present before hydration and remains stable after interaction.
@@ -44,6 +56,8 @@ export function Example() {
 ```
 
 Closed panel content is not mounted by default. Set `keepMounted` on `AccordionPanel` when a hidden panel must stay in the DOM.
+Shared types such as `AccordionValueInput`, `AccordionValueOutput`, `AccordionOrientation`, and `AccordionSize` are exported from the package entry point.
+Set `showIndicator={false}` on `AccordionTrigger` when you want to replace the default chevron with fully custom trigger content.
 
 ## Styling Requirements
 
@@ -76,7 +90,9 @@ npm run storybook:react
 
 Published Chromatic Storybook:
 
-- [https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-alfsfafmse.chromatic.com/)
+- [https://69ae3d6f019c2b8f497fdd28-zwrtooohxn.chromatic.com/](https://69ae3d6f019c2b8f497fdd28-zwrtooohxn.chromatic.com/)
+
+When Chromatic is republished, update this Storybook link and the root README link in the repo.
 
 ## Testing And Development Notes
 

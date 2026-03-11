@@ -2,8 +2,25 @@
 
 import type * as React from 'react';
 import type {
+  AccordionHiddenAttribute,
+  AccordionIds,
+  AccordionItemDescriptor,
+  AccordionNavigationDirection,
   AccordionOrientation,
   AccordionSize,
+  AccordionState,
+  AccordionValueInput,
+  AccordionValueOutput,
+} from '@accretion-ui/core';
+
+export type {
+  AccordionHiddenAttribute,
+  AccordionIds,
+  AccordionItemDescriptor,
+  AccordionNavigationDirection,
+  AccordionOrientation,
+  AccordionSize,
+  AccordionState,
   AccordionValueInput,
   AccordionValueOutput,
 } from '@accretion-ui/core';
@@ -33,8 +50,9 @@ export interface AccordionHeaderProps
   extends React.HTMLAttributes<HTMLHeadingElement> {}
 
 export interface AccordionTriggerProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
-
+  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  showIndicator?: boolean;
+}
 export interface AccordionPanelProps
   extends React.HTMLAttributes<HTMLDivElement> {
   hiddenUntilFound?: boolean;

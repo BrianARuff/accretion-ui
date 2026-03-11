@@ -7,11 +7,28 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  type AccordionValueOutput,
 } from '@accretion-ui/react';
 
 export function AccordionDemo() {
   const [multipleValue, setMultipleValue] = useState<string[]>(['shipping']);
   const [singleValue, setSingleValue] = useState<string | null>('timing');
+
+  const normalizeMultipleValue = (value: AccordionValueOutput): string[] => {
+    if (Array.isArray(value)) {
+      return value;
+    }
+
+    return value ? [value] : [];
+  };
+
+  const normalizeSingleValue = (value: AccordionValueOutput): string | null => {
+    if (Array.isArray(value)) {
+      return value[0] ?? null;
+    }
+
+    return value;
+  };
 
   return (
     <section className="demo-grid">
@@ -30,20 +47,27 @@ export function AccordionDemo() {
           collapsible
           data-testid="react-single-root"
           id="react-single-root"
-          onValueChange={(value) => {
-            if (Array.isArray(value)) {
-              setSingleValue(value[0] ?? null);
-              return;
-            }
-
-            setSingleValue(value);
-          }}
+          onValueChange={(value) => setSingleValue(normalizeSingleValue(value))}
           value={singleValue}
         >
           <AccordionItem value="timing">
-            <AccordionHeader>
-              <AccordionTrigger data-testid="react-single-trigger-timing">
+            <AccordionHeader className="dual-trigger-row">
+              <AccordionTrigger
+                className="dual-trigger dual-trigger--label"
+                data-testid="react-single-trigger-timing"
+              >
                 Delivery timeline
+              </AccordionTrigger>
+              <AccordionTrigger
+                aria-label="Toggle delivery timeline"
+                className="dual-trigger dual-trigger--icon"
+                data-testid="react-single-trigger-timing-icon"
+                id="react-single-root-timing-trigger-icon"
+                showIndicator={false}
+              >
+                <span aria-hidden="true" className="dual-trigger__icon">
+                  +
+                </span>
               </AccordionTrigger>
             </AccordionHeader>
             <AccordionPanel data-testid="react-single-panel-timing">
@@ -54,8 +78,14 @@ export function AccordionDemo() {
 
           <AccordionItem value="billing">
             <AccordionHeader>
-              <AccordionTrigger data-testid="react-single-trigger-billing">
-                Billing handoff
+              <AccordionTrigger
+                data-testid="react-single-trigger-billing"
+                showIndicator={false}
+              >
+                <span>Billing handoff</span>
+                <span aria-hidden="true" data-testid="react-single-trigger-billing-meta">
+                  Custom
+                </span>
               </AccordionTrigger>
             </AccordionHeader>
             <AccordionPanel data-testid="react-single-panel-billing">
@@ -94,14 +124,7 @@ export function AccordionDemo() {
           data-testid="react-multiple-root"
           id="react-multiple-root"
           multiple
-          onValueChange={(value) => {
-            if (Array.isArray(value)) {
-              setMultipleValue(value);
-              return;
-            }
-
-            setMultipleValue(value ? [value] : []);
-          }}
+          onValueChange={(value) => setMultipleValue(normalizeMultipleValue(value))}
           value={multipleValue}
         >
           <AccordionItem value="shipping">

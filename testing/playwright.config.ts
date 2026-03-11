@@ -1,6 +1,8 @@
 import { defineConfig } from '@playwright/test';
 
 const managedServers = process.env.PLAYWRIGHT_MANAGED_SERVERS !== 'false';
+const reactSmokePort = process.env.REACT_SMOKE_PORT ?? '3100';
+const reactSmokeUrl = `http://127.0.0.1:${reactSmokePort}`;
 
 export default defineConfig({
   fullyParallel: true,
@@ -14,11 +16,11 @@ export default defineConfig({
   webServer: managedServers
     ? [
         {
-          command: 'npx next dev --port 3000 --hostname 127.0.0.1',
+          command: `npx next dev --port ${reactSmokePort} --hostname 127.0.0.1`,
           cwd: 'smoke-apps/react-next',
           reuseExistingServer: true,
           timeout: 240_000,
-          url: 'http://127.0.0.1:3000',
+          url: reactSmokeUrl,
         },
         {
           command: 'npx ng serve angular-ssr --host 127.0.0.1 --port 4300',
@@ -50,7 +52,7 @@ export default defineConfig({
       name: 'react-smoke',
       testMatch: /react-smoke\.spec\.ts/,
       use: {
-        baseURL: 'http://127.0.0.1:3000',
+        baseURL: reactSmokeUrl,
       },
     },
     {

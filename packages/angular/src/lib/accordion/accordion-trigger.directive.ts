@@ -3,6 +3,8 @@ import {
   ElementRef,
   HostBinding,
   HostListener,
+  Input,
+  booleanAttribute,
 } from '@angular/core';
 import { AccordionItemDirective } from './accordion-item.directive';
 
@@ -12,6 +14,8 @@ import { AccordionItemDirective } from './accordion-item.directive';
   standalone: true,
 })
 export class AccordionTriggerDirective {
+  @Input({ transform: booleanAttribute }) showIndicator = true;
+
   @HostBinding('class.ac-accordion__trigger') readonly triggerClass = true;
   @HostBinding('attr.data-accretion-accordion-item')
   get dataItem(): string {
@@ -24,6 +28,11 @@ export class AccordionTriggerDirective {
   @HostBinding('attr.data-disabled')
   get dataDisabled(): '' | null {
     return this.isDisabled ? '' : null;
+  }
+
+  @HostBinding('attr.data-indicator')
+  get dataIndicator(): 'default' | 'hidden' {
+    return this.showIndicator ? 'default' : 'hidden';
   }
 
   @HostBinding('attr.data-open')

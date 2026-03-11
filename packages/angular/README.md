@@ -30,6 +30,7 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  type AccordionValueOutput,
 } from '@accretion-ui/angular';
 ```
 
@@ -40,15 +41,23 @@ Use those imports in the Angular component metadata where the Accordion appears:
   imports: [Accordion, AccordionItem, AccordionHeader, AccordionTrigger, AccordionPanel],
   standalone: true,
 })
+export class ExampleComponent {
+  handleValueChange(value: AccordionValueOutput) {
+    console.log(value);
+  }
+}
 ```
 
 Template example:
 
 ```html
-<div acAccordion defaultValue="delivery" id="faq-accordion">
+<div acAccordion defaultValue="delivery" id="faq-accordion" (valueChange)="handleValueChange($event)">
   <div acAccordionItem value="delivery">
     <h3 acAccordionHeader>
-      <button acAccordionTrigger type="button">Delivery timeline</button>
+      <button acAccordionTrigger [showIndicator]="false" type="button">
+        <span>Delivery timeline</span>
+        <span aria-hidden="true">Custom</span>
+      </button>
     </h3>
     <div acAccordionPanel>
       Angular inputs and outputs control the component without adding extra wrapper elements.
@@ -58,6 +67,8 @@ Template example:
 ```
 
 Closed panel content is not mounted by default. Set `keepMounted` on `acAccordionPanel` when a hidden panel must stay in the DOM.
+Shared types such as `AccordionValueInput`, `AccordionValueOutput`, `AccordionOrientation`, and `AccordionSize` are exported from the package entry point.
+Set `[showIndicator]="false"` on `acAccordionTrigger` when you want to replace the default chevron with fully custom trigger content.
 
 ## Styling Requirements
 
@@ -90,7 +101,9 @@ npm run storybook:angular
 
 Published Chromatic Storybook:
 
-- [https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/](https://69ae3de6fef62640081354ec-bgpcolthsm.chromatic.com/)
+- [https://69ae3de6fef62640081354ec-fbslbprsoe.chromatic.com/](https://69ae3de6fef62640081354ec-fbslbprsoe.chromatic.com/)
+
+When Chromatic is republished, update this Storybook link and the root README link in the repo.
 
 ## Testing And Development Notes
 
