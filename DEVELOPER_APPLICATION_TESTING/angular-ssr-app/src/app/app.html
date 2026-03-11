@@ -1,0 +1,149 @@
+<main class="review-shell">
+  <section class="hero">
+    <p class="eyebrow">Developer application testing</p>
+    <h1>Angular Accordion manual review</h1>
+    <p class="intro">
+      This app exercises controlled state, multiple expansion, disabled items,
+      kept-mounted content, and split triggers where the left text control and
+      right icon control can be tested independently.
+    </p>
+  </section>
+
+  <section class="review-grid">
+    <article class="review-card">
+      <div class="card-header">
+        <div>
+          <p class="card-kicker">Controlled single</p>
+          <h2>Delivery decision flow</h2>
+        </div>
+        <div class="control-row">
+          <button type="button" (click)="singleValue.set('delivery')">
+            Open delivery
+          </button>
+          <button type="button" (click)="singleValue.set('handoff')">
+            Open handoff
+          </button>
+          <button type="button" (click)="collapseAllSingle()">
+            Collapse all
+          </button>
+        </div>
+      </div>
+
+      <div
+        acAccordion
+        [collapsible]="true"
+        [value]="singleValue()"
+        (valueChange)="onSingleValueChange($event)"
+        id="developer-angular-single"
+      >
+        <div acAccordionItem value="delivery">
+          <h3 acAccordionHeader class="split-trigger-row">
+            <button
+              acAccordionTrigger
+              class="split-trigger split-trigger--label"
+              data-testid="developer-angular-delivery-label-trigger"
+              type="button"
+            >
+              Delivery timeline
+            </button>
+            <button
+              acAccordionTrigger
+              aria-label="Toggle delivery timeline"
+              class="split-trigger split-trigger--icon"
+              data-testid="developer-angular-delivery-icon-trigger"
+              id="developer-angular-single-delivery-trigger-icon"
+              [showIndicator]="false"
+              type="button"
+            >
+              <span aria-hidden="true" class="split-trigger__icon">+</span>
+            </button>
+          </h3>
+          <div acAccordionPanel>
+            Estimated milestones, environment readiness, and downstream release
+            timing stay grouped together without forcing a custom wrapper around
+            the native parts.
+          </div>
+        </div>
+
+        <div acAccordionItem value="handoff">
+          <h3 acAccordionHeader>
+            <button acAccordionTrigger [showIndicator]="false" type="button">
+              <span>Engineering handoff</span>
+              <span aria-hidden="true" class="trigger-meta">Spec pack</span>
+            </button>
+          </h3>
+          <div acAccordionPanel [keepMounted]="true">
+            This panel uses <code>keepMounted</code> so the content remains in
+            the DOM even after it closes.
+          </div>
+        </div>
+
+        <div acAccordionItem [disabled]="true" value="archived">
+          <h3 acAccordionHeader>
+            <button acAccordionTrigger type="button">Archived scope</button>
+          </h3>
+          <div acAccordionPanel>
+            Disabled items stay present but should not toggle.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="review-card">
+      <div class="card-header">
+        <div>
+          <p class="card-kicker">Controlled multiple</p>
+          <h2>Launch readiness checklist</h2>
+        </div>
+        <div class="control-row">
+          <button type="button" (click)="expandAllMultiple()">Expand all</button>
+          <button type="button" (click)="multipleValue.set([])">
+            Collapse all
+          </button>
+        </div>
+      </div>
+
+      <div
+        acAccordion
+        [multiple]="true"
+        [value]="multipleValue()"
+        (valueChange)="onMultipleValueChange($event)"
+        id="developer-angular-multiple"
+      >
+        <div acAccordionItem value="support">
+          <h3 acAccordionHeader>
+            <button acAccordionTrigger type="button">Support readiness</button>
+          </h3>
+          <div acAccordionPanel>
+            Verify support scripts, escalation notes, and launch-window
+            coverage.
+          </div>
+        </div>
+
+        <div acAccordionItem value="launch">
+          <h3 acAccordionHeader>
+            <button acAccordionTrigger type="button">
+              Launch communications
+            </button>
+          </h3>
+          <div acAccordionPanel [hiddenUntilFound]="true">
+            This panel opts into hidden-until-found behavior so browser search
+            can still surface the section.
+          </div>
+        </div>
+
+        <div acAccordionItem value="reporting">
+          <h3 acAccordionHeader>
+            <button acAccordionTrigger type="button">
+              Operational reporting
+            </button>
+          </h3>
+          <div acAccordionPanel>
+            KPI ownership, rollout dashboards, and follow-up review notes stay
+            open independently in multiple mode.
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>

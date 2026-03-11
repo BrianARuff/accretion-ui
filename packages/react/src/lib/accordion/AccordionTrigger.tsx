@@ -13,7 +13,15 @@ export const AccordionTrigger = React.forwardRef<
   HTMLButtonElement,
   AccordionTriggerProps
 >(function AccordionTrigger(
-  { children, className, disabled, onClick, onKeyDown, ...rest },
+  {
+    children,
+    className,
+    disabled,
+    onClick,
+    onKeyDown,
+    showIndicator = true,
+    ...rest
+  },
   forwardedRef,
 ) {
   const accordion = useAccordionRootContext();
@@ -72,6 +80,7 @@ export const AccordionTrigger = React.forwardRef<
         'data-accretion-accordion-item': item.value,
         'data-accretion-accordion-trigger': '',
         'data-disabled': dataAttribute(isDisabled),
+        'data-indicator': showIndicator ? 'default' : 'hidden',
         'data-open': dataAttribute(item.open),
         'data-orientation': accordion.orientation,
         'data-size': accordion.size,

@@ -60,3 +60,33 @@ body {
   font: inherit;
   padding: 0.625rem 0.95rem;
 }
+
+.dual-trigger-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+}
+
+.dual-trigger-row > .ac-accordion__trigger {
+  width: auto;
+}
+
+.dual-trigger {
+  min-width: 0;
+}
+
+.dual-trigger--label {
+  justify-content: flex-start;
+}
+
+.dual-trigger--icon {
+  justify-content: center;
+  min-width: 3.5rem;
+  padding-inline: 1rem;
+}
+
+.dual-trigger__icon {
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1;
+}

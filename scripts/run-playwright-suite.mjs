@@ -7,12 +7,15 @@ import {
   waitForUrl,
 } from './lib/runtime.mjs';
 
+const reactSmokePort = process.env.REACT_SMOKE_PORT ?? '3100';
+const reactSmokeUrl = `http://127.0.0.1:${reactSmokePort}`;
+
 const servers = [
   {
-    args: ['next', 'dev', '--port', '3000', '--hostname', '127.0.0.1'],
+    args: ['next', 'dev', '--port', reactSmokePort, '--hostname', '127.0.0.1'],
     command: 'npx',
     cwd: 'smoke-apps/react-next',
-    url: 'http://127.0.0.1:3000',
+    url: reactSmokeUrl,
   },
   {
     args: ['ng', 'serve', 'angular-ssr', '--host', '127.0.0.1', '--port', '4300'],
@@ -38,8 +41,8 @@ const servers = [
 
 for (const { port, matchers } of [
   {
-    matchers: ['next dev --port 3000', '@accretion-ui/react-smoke'],
-    port: 3000,
+    matchers: [`next dev --port ${reactSmokePort}`, '@accretion-ui/react-smoke'],
+    port: Number(reactSmokePort),
   },
   {
     matchers: ['ng serve angular-ssr', 'angular-ssr'],

@@ -1,6 +1,6 @@
 {
   "name": "@accretion-ui/react",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "Native React Accordion components generated from the shared Accretion UI source.",
   "type": "module",
   "sideEffects": [

@@ -21,7 +21,7 @@ const getTriggerDescriptors = (
     return [];
   }
 
-  return Array.from(
+  const descriptors = Array.from(
     rootElement.querySelectorAll<HTMLButtonElement>(
       '[data-accretion-accordion-trigger]',
     ),
@@ -32,6 +32,24 @@ const getTriggerDescriptors = (
       value: element.dataset.accretionAccordionItem ?? '',
     }))
     .filter((item) => item.value.length > 0);
+
+  const dedupedDescriptors = new Map<string, AccordionItemDescriptor>();
+
+  for (const descriptor of descriptors) {
+    const existingDescriptor = dedupedDescriptors.get(descriptor.value);
+
+    if (!existingDescriptor) {
+      dedupedDescriptors.set(descriptor.value, descriptor);
+      continue;
+    }
+
+    dedupedDescriptors.set(descriptor.value, {
+      ...existingDescriptor,
+      disabled: Boolean(existingDescriptor.disabled && descriptor.disabled),
+    });
+  }
+
+  return Array.from(dedupedDescriptors.values());
 };
 
 const AccordionComponent = React.forwardRef<HTMLDivElement, AccordionProps>(

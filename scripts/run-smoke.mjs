@@ -7,6 +7,8 @@ import {
 } from './lib/runtime.mjs';
 
 const target = process.argv[2];
+const reactSmokePort = process.env.REACT_SMOKE_PORT ?? '3100';
+const reactSmokeUrl = `http://127.0.0.1:${reactSmokePort}`;
 
 const targetConfig = {
   angular: {
@@ -33,11 +35,15 @@ const targetConfig = {
     ],
     playwrightProject: 'react-smoke',
     start: {
-      args: ['run', '--workspace', '@accretion-ui/react-smoke', 'start'],
-      command: 'npm',
-      env: process.env,
+      args: ['next', 'start', '--port', reactSmokePort, '--hostname', '127.0.0.1'],
+      command: 'npx',
+      cwd: 'smoke-apps/react-next',
+      env: {
+        ...process.env,
+        PORT: reactSmokePort,
+      },
     },
-    url: 'http://127.0.0.1:3000',
+    url: reactSmokeUrl,
   },
 };
 
@@ -50,9 +56,9 @@ const config = targetConfig[target];
 ensurePortAvailable({
   matchers:
     target === 'react'
-      ? ['next start --port 3000', '@accretion-ui/react-smoke']
+      ? [`next start --port ${reactSmokePort}`, '@accretion-ui/react-smoke']
       : ['angular-ssr/dist/angular-ssr/server/server.mjs', 'angular-ssr'],
-  port: target === 'react' ? 3000 : 4300,
+  port: target === 'react' ? Number(reactSmokePort) : 4300,
 });
 
 for (const [command, args] of config.buildSteps) {

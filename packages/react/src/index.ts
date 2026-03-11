@@ -4,9 +4,18 @@ export { AccordionItem } from './lib/accordion/AccordionItem';
 export { AccordionPanel } from './lib/accordion/AccordionPanel';
 export { AccordionTrigger } from './lib/accordion/AccordionTrigger';
 export type {
+  AccordionHiddenAttribute,
   AccordionHeaderProps,
+  AccordionIds,
+  AccordionItemDescriptor,
   AccordionItemProps,
+  AccordionNavigationDirection,
+  AccordionOrientation,
   AccordionPanelProps,
   AccordionProps,
+  AccordionSize,
+  AccordionState,
   AccordionTriggerProps,
+  AccordionValueInput,
+  AccordionValueOutput,
 } from './lib/accordion/types';

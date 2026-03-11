@@ -20,6 +20,7 @@ test('Angular Storybook docs and default story load successfully', async ({ page
   await expect(docsFrame.getByRole('columnheader', { name: 'Input / output' })).toBeVisible();
   await expect(docsFrame.getByRole('columnheader', { name: 'CSS variable' })).toBeVisible();
   await expect(docsFrame.getByText('keepMounted').first()).toBeVisible();
+  await expect(docsFrame.getByText('showIndicator').first()).toBeVisible();
 
   await page.goto('/?path=/story/angular-accordion--default');
 
@@ -135,6 +136,19 @@ test('Angular Storybook docs and default story load successfully', async ({ page
     outlineOffset: '-5px',
     outlineWidth: '2px',
   });
+
+  await page.goto('/?path=/story/angular-accordion--custom-trigger-content');
+
+  const customFrame = page.frameLocator('#storybook-preview-iframe');
+  const customTrigger = customFrame.getByTestId(
+    'storybook-angular-custom-trigger-button',
+  );
+
+  await expect(customTrigger).toHaveAttribute('data-indicator', 'hidden');
+  await expect(customTrigger).toContainText('Release plan');
+  await expect(
+    customFrame.getByTestId('storybook-angular-custom-trigger-meta'),
+  ).toHaveText('Custom');
 
   await page.waitForTimeout(500);
   expect(consoleErrors).toEqual([]);

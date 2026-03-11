@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  type AccordionValueOutput,
 } from '@accretion-ui/angular';
 
 @Component({
@@ -46,13 +47,25 @@ import {
             id="angular-single-root"
           >
             <div acAccordionItem value="timing">
-              <h3 acAccordionHeader>
+              <h3 acAccordionHeader class="dual-trigger-row">
                 <button
                   acAccordionTrigger
+                  class="dual-trigger dual-trigger--label"
                   data-testid="angular-single-trigger-timing"
                   type="button"
                 >
                   Delivery timeline
+                </button>
+                <button
+                  acAccordionTrigger
+                  aria-label="Toggle delivery timeline"
+                  class="dual-trigger dual-trigger--icon"
+                  data-testid="angular-single-trigger-timing-icon"
+                  id="angular-single-root-timing-trigger-icon"
+                  [showIndicator]="false"
+                  type="button"
+                >
+                  <span aria-hidden="true" class="dual-trigger__icon">+</span>
                 </button>
               </h3>
               <div
@@ -69,9 +82,16 @@ import {
                 <button
                   acAccordionTrigger
                   data-testid="angular-single-trigger-billing"
+                  [showIndicator]="false"
                   type="button"
                 >
-                  Billing handoff
+                  <span>Billing handoff</span>
+                  <span
+                    aria-hidden="true"
+                    data-testid="angular-single-trigger-billing-meta"
+                  >
+                    Custom
+                  </span>
                 </button>
               </h3>
               <div
@@ -170,7 +190,7 @@ export class AppComponent {
   multipleValue: string[] = ['shipping'];
   singleValue: string | null = 'timing';
 
-  normalizeMultipleValue(value: string | string[] | null): string[] {
+  normalizeMultipleValue(value: AccordionValueOutput): string[] {
     if (Array.isArray(value)) {
       return value;
     }
@@ -182,7 +202,7 @@ export class AppComponent {
     return [];
   }
 
-  normalizeSingleValue(value: string | string[] | null): string | null {
+  normalizeSingleValue(value: AccordionValueOutput): string | null {
     if (Array.isArray(value)) {
       return value[0] ?? null;
     }

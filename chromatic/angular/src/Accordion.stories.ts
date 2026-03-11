@@ -5,6 +5,7 @@ import {
   AccordionItem,
   AccordionPanel,
   AccordionTrigger,
+  type AccordionValueOutput,
 } from '../../../packages/angular/src/public-api';
 
 const meta: Meta = {
@@ -67,7 +68,7 @@ export const ControlledSingle: Story = {
   render: () => ({
     props: {
       singleValue: 'billing',
-      toSingleValue(nextValue: string | string[] | null) {
+      toSingleValue(nextValue: AccordionValueOutput) {
         this.singleValue = Array.isArray(nextValue) ? nextValue[0] ?? null : nextValue;
       },
     },
@@ -159,6 +160,37 @@ export const DisabledItem: Story = {
           </h3>
           <div acAccordionPanel>
             Disabled items should not toggle or receive action styling.
+          </div>
+        </div>
+      </div>
+    `,
+  }),
+};
+
+export const CustomTriggerContent: Story = {
+  render: () => ({
+    template: `
+      <div acAccordion defaultValue="release" id="storybook-angular-custom-trigger">
+        <div acAccordionItem value="release">
+          <h3 acAccordionHeader>
+            <button
+              acAccordionTrigger
+              [showIndicator]="false"
+              data-testid="storybook-angular-custom-trigger-button"
+              type="button"
+            >
+              <span>Release plan</span>
+              <span
+                aria-hidden="true"
+                data-testid="storybook-angular-custom-trigger-meta"
+              >
+                Custom
+              </span>
+            </button>
+          </h3>
+          <div acAccordionPanel>
+            Trigger content can include multiple child elements while the default
+            indicator stays hidden.
           </div>
         </div>
       </div>
